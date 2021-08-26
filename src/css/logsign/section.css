@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* login */
+.asdlogin{
+    background-position: center;
+    background-size: cover;
+    background-position-x: -100px;
+    background-image: url(https://raw.githubusercontent.com/farizian/week15/master/img/planebanner.png);
+}
+.lgn{
+    height: 1140px;
+    padding: 20px 9% 20px 9%;
+    /* background-color: #ffba33; */
+}
+.lgn .logosign{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+.lgn .logosign img{
+    height: 33px;
+    width: 50px;
+    margin-right: 20px;
+}
+.lgn .logosign h1{
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    color: #414141;
+    text-align: left;
+}
+.lgn .formlgn{
+    position: relative;
+    top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+}
+.lgn .formlgn .header{
+    width: 100%;
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+.lgn .formlgn .header h1{
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 54px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: black;
+}
+.lgn .formlgn .signbox{
+    width: 100%;
+    /* background-color: aqua; */
+}
+.lgn .formlgn .signbox h3{
+    font-size: 20px;
+    font-weight: bold;
+    color: #4F5665;
+    text-align: left;
+    right: 155px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.lgn .formlgn .signbox .textbox{
+    width: 100%;
+    background-color: transparent;
+    border-bottom: solid 2px #D2C2FF;
+    margin-bottom: 20px;
+}
+.lgn .formlgn .signbox .textbox input{
+    box-sizing: border-box ;
+    height: 60px;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+    width: 90%;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+}
+.lgn .buttonlgn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: tomato;
+    width: 100%;
+}
+.lgn .buttonlgn .btn{
+    width: 100%;
+    padding: 0;
+}
+.lgn .buttonlgn .btn .sign{
+    background-color: #2395FF;
+    font-family: poppins;
+    width: 100%;
+    height: 60px;
+    margin-top: 30px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 15px;
+    box-shadow: 0px 8px 10px 0px #2395FF4D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 50ms;
+}
+.lgn .buttonlgn .btn .sign:hover{
+    font-weight: 900;
+    transform: scale(1.1);
+}
+.lgn .anothersign{
+    /* background-color: thistle; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 85%;
+    margin-left: 24px;
+    border-bottom: solid 1px #D8D8D8;
+}
+#othersgn1{
+    border: none;
+    height: 150px;
+    justify-content: flex-start;
+    padding-top: 15px;
+}
+.lgn .anothersign .forgot{
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+.lgn .anothersign .forgottap{
+    text-decoration: underline;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    color: #2395FF;
+    text-align: left;
+    cursor: pointer;
+    transition: 50ms;
+}
+.lgn .anothersign .forgottap:hover{
+    transform: scale(1.1);
+}
+.lgn .anothersign .btn{
+    /* background-color: cadetblue; */
+    width: 100%;
+}
+.lgn .anothersign .btn button{
+    height: 52px;
+    width: 95px;
+    left: 983px;
+    top: 679px;
+    border-radius: 6px;
+    border: 1px solid #2395FF;
+    margin-right: 20px;
+}
+#bt2{
+    margin: 0;
+}
+@media screen and (max-width: 768px) {
+    .asdlogin{
+        width: 30%;
+    }
+    .lgn{
+        width: 70%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    .lgn .formlgn{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .lgn .formlgn .signbox{
+        width: 80%;
+        padding: 5px;
+    }
+    .lgn .formlgn .signbox .textbox input{
+        height: 60px;
+        width: 100%;
+    }
+    .lgn .buttonlgn .btn .sign{
+        margin-bottom: 30px;
+        border: none;
+        background-color: #ffba33;
+        width: 100%;
+        height: 60px;
+    }
+    .lgn .buttonlgn .btn{
+        width: 80%;
+    }
+    .lgn .buttonlgn .btn .googlebtn{
+        background-color: white;
+        width: 100%;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .asdlogin{
+        display: none;
+    }
+    .lgn{
+        width: 100%;
+        height: 1000px;
+    }
+}
+
