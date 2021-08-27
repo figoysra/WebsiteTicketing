@@ -214,7 +214,6 @@
     transform: scale(1.1);
 }
 .lgn .anothersign .btn{
-    /* background-color: cadetblue; */
     width: 100%;
 }
 .lgn .anothersign .btn button{
@@ -250,13 +249,6 @@
     .lgn .formlgn .signbox .textbox input{
         height: 60px;
         width: 100%;
-    }
-    .lgn .buttonlgn .btn .sign{
-        margin-bottom: 30px;
-        border: none;
-        background-color: #ffba33;
-        width: 100%;
-        height: 60px;
     }
     .lgn .buttonlgn .btn{
         width: 80%;
