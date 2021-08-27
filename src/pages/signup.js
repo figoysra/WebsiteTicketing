@@ -2,19 +2,20 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import '../css/logsign/section.css'
 import { useState } from "react"
 import {Link} from 'react-router-dom'
+import { FcCheckmark } from "@react-icons/all-files/fc/FcCheckmark";
 
 
 
 const Signup =(props)=>{
   const [user, setUser] = useState([])
-
+  const [toggle, setToggle]=useState(true)
   const setData=(event)=>{
     setUser({
       ...user,
       [event.target.name]: event.target.value
     })
   }
-  
+  const toggleCheck=()=>setToggle(!toggle)
   const submitData=(event)=>{
 
     const {email, password, phone}= user
@@ -42,7 +43,7 @@ const Signup =(props)=>{
           <div className="row">
             <aside className="asdlogin col-lg-7">
             </aside>
-            <section className="lgn col-lg-5">
+            <section className="lgn col-lg-5 ">
               <div className="logosign">
                 <img src="https://raw.githubusercontent.com/farizian/week15/master/img/plane.png" alt=""></img>
                 <h1>Ankasa</h1>
@@ -69,13 +70,19 @@ const Signup =(props)=>{
                   <button className="sign" onClick={submitData}>Sign Up</button>
                 </div>
                 <div className="checkbox">
-                  <img src="BiCheck" alt=""></img>
+                  <div onClick={toggleCheck} className="check">
+                    {!toggle?
+                      <FcCheckmark className="mark" />:null
+                    }
+                  </div>
+                  <p>Accept terms and condition</p>
                 </div>
-                <div className="buttonlgn">
+                <div className="textbox">
+                  <p>Already have an account?</p>
+                </div>
                 <Link to="/login" className="btn">
-                  <button className="sign" >Sign In</button>
+                  <button className="sign" id="sign2">Sign In</button>
                 </Link>
-                </div>
               </div>
             </section>
           </div>
