@@ -149,13 +149,6 @@
     cursor: pointer;
     margin-right: 15px;
 }
-.lgn .buttonlgn .checkbox .check .mark{
-    position: absolute;
-    background-color: transparent;
-    font-size: 28px;
-    right: 406px;
-    top: 636px;
-}
 .lgn .buttonlgn .checkbox p{
     font-family: Lato;
     font-size: 16px;
@@ -163,6 +156,7 @@
     font-weight: 400;
     text-align: left;
     color: #595959;
+    margin-top: 2px;
 }
 .lgn .buttonlgn .textbox{
     width: 90%;

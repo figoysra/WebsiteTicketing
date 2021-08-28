@@ -2,25 +2,23 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import '../css/logsign/section.css'
 import { useState } from "react"
 import {Link} from 'react-router-dom'
-import { FcCheckmark } from "@react-icons/all-files/fc/FcCheckmark";
+import { Input } from 'reactstrap';
 
 
 
 const Signup =(props)=>{
   const [user, setUser] = useState([])
-  const [toggle, setToggle]=useState(true)
   const setData=(event)=>{
     setUser({
       ...user,
       [event.target.name]: event.target.value
     })
   }
-  const toggleCheck=()=>setToggle(!toggle)
   const submitData=(event)=>{
 
-    const {email, password, phone}= user
+    const {fullname, email, password}= user
     event.preventDefault();
-    const data = {email, password, phone}
+    const data = {fullname, email, password}
     const local = localStorage.getItem('user')
     const localuser = JSON.parse(local)
     if(localuser===null){
@@ -70,11 +68,8 @@ const Signup =(props)=>{
                   <button className="sign" onClick={submitData}>Sign Up</button>
                 </div>
                 <div className="checkbox">
-                  <div onClick={toggleCheck} className="check">
-                    {!toggle?
-                      <FcCheckmark className="mark" />:null
-                    }
-                  </div>
+                  <Input type="checkbox" className="check" name="terms" value={true}>
+                      </Input>
                   <p>Accept terms and condition</p>
                 </div>
                 <div className="textbox">
