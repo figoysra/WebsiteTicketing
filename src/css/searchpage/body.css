@@ -121,14 +121,14 @@
   font-style: normal;
   font-weight: 600;
   color: black;
-  background-color: azure;
+  /* background-color: azure; */
 }
 .aside .menuside .reset{
   display: flex;
   width: 50%;
   align-items: center;
   justify-content: flex-end;
-  background-color: wheat;
+  /* background-color: wheat; */
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
@@ -143,7 +143,7 @@
 .aside .filtercard{
   display: flex;
   flex-direction: column;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
@@ -224,7 +224,7 @@
   display: flex;
   align-items: center;
   width: 50%;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 .section .headers h1{
   font-family: Poppins;
@@ -246,7 +246,7 @@
   align-items: center;
   justify-content: flex-end;
   width: 50%;
-  background-color: bisque;
+  /* background-color: bisque; */
 }
 .section .headers .sortby p{
   font-family: Poppins;
@@ -270,7 +270,7 @@
 }
 .section .cardticket .flightlogo{
   display: flex;
-  background-color: wheat;
+  /* background-color: wheat; */
   align-items: center;
 }
 .section .cardticket .flightlogo img{
@@ -290,11 +290,11 @@
   display: flex;
   margin-top: 20px;
   padding: 0;
-  background-color: violet;
+  /* background-color: violet; */
 }
 .section .cardticket .menubar .country{
   display: flex;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 .section .cardticket .menubar .country .row{
   display: flex;
@@ -302,7 +302,7 @@
   align-items: flex-start;
   margin: 0;
   padding: 0;
-  background-color: wheat;
+  /* background-color: wheat; */
 }
 .section .cardticket .menubar .country .row .country1{
   color: black;
@@ -320,20 +320,20 @@
   font-style: normal;
   font-weight: 400;
   color: #6B6B6B;
-  background-color: violet;
+  /* background-color: violet; */
   margin: 0;
 }
 .section .cardticket .menubar .country .img{
   width: 19px;
   height: 18px;
-  margin-top: 5px;
-  background-color: violet;
+  margin: 5px 15px 0 15px;
+  /* background-color: violet; */
 }
 .section .cardticket .menubar .time{
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
-  background-color: turquoise;
+  margin-left: 40px;
+  /* background-color: turquoise; */
 }
 .section .cardticket .menubar .time .detailtime{
   font-family: Poppins;
@@ -357,7 +357,7 @@
   align-items: center;
   padding-left: 10px;
   margin-left: 30px;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
 }
 .section .cardticket .menubar .facilitieslogo img{
   width: 22px;
@@ -367,8 +367,8 @@
 .section .cardticket .menubar .price{
   display: flex;
   align-items: center;
-  margin: 0 10px 0 30px;
-  background-color: wheat;
+  margin: 0 10px 0 20px;
+  /* background-color: wheat; */
 }
 .section .cardticket .menubar .price p{
   font-family: Poppins;
@@ -382,8 +382,11 @@
 }
 .section .cardticket .menubar .btn{
   display: flex;
-  justify-content: center;
-  background-color: #E5E5E5;
+  width: 150px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  /* background-color: #E5E5E5; */
 }
 .section .cardticket .menubar .btn .select{
   font-family: Poppins;
