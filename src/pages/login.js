@@ -21,11 +21,12 @@ const submit=(event)=>{
   const localuser = JSON.parse(local)
   if(email===localuser.email&&password===localuser.password){
     localStorage.setItem("token","123abc123abc123abcbca123")
+    props.history.push('/');
   }else if(email!==localuser.email){
     alert("account tidak ditemukan, silahkan registrasi")
     props.history.push('/signup');
   }
-  else if(email===null&&password===null){
+  else if(email===""&&password===""){
     alert("input tidak boleh kosong")
   }
   else{
