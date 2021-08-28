@@ -17,19 +17,22 @@ const setData=(event)=>{
 const submit=(event)=>{
   const {email, password}= user
   event.preventDefault();
-  const data = {email, password}
   const local = localStorage.getItem('user')
   const localuser = JSON.parse(local)
-  if(data.email===localuser.email&&data.password===localuser.password){
+  if(email===localuser.email&&password===localuser.password){
     localStorage.setItem("token","123abc123abc123abcbca123")
-  }else if(data.email!==localuser.email){
+    props.history.push('/');
+  }else if(email!==localuser.email){
     alert("account tidak ditemukan, silahkan registrasi")
     props.history.push('/signup');
+  }
+  else if(email===""&&password===""){
+    alert("input tidak boleh kosong")
   }
   else{
     alert("password salah")
   }
-  console.log(data)
+  console.log(user)
   // localStorage.removeItem('user')
   console.log(localuser)
 }
@@ -51,7 +54,7 @@ const submit=(event)=>{
                 </div>
                 <div className="signbox">
                   <div className="textbox">
-                    <input type="text" placeholder="Username" name="username" onChange={setData}></input>
+                    <input type="text" placeholder="Username" name="email" onChange={setData}></input>
                   </div>
                   <div className="textbox">
                     <input type="password" placeholder="Password" name="password" onChange={setData}></input>

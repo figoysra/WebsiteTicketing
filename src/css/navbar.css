@@ -4,304 +4,244 @@
     border-bottom: 2px solid #eeeeee;
     margin: 0;
     padding: 0;
+    height: 150px;
 }
 .bar{
-    background-color: #ffba33 !important;
+    background-color: transparent;
+    border: none;
 }
-.bar .baricon{
-    color: #6a4029 !important;
-}
-.coffeelogo{
+
+.planelogo{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     cursor: pointer;
     transition-duration: 50ms;
-    margin-left: 7%;
+    margin-left: 5%;
 }
-.coffeelogo:hover{
+.planelogo:hover{
     font-weight: 600;
     transform: scale(1.1);
 }
-.coffeelogo img{
-    width: 25px;
-    height: 25px;
+.planelogo img{
+    height: 33px;
+    width: 50px;
+    margin-right: 15px;
 }
-.coffeelogo h1{
-    font-size: 15px;
-    font-weight: 800;
-    position: relative;
-    left: 11px;
-    margin-top: 7px;
-    color: #6a4029 !important;
+.planelogo h1{
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 10px;
+    color: black !important;
 }
 .navmenu{
     margin: 0;
     padding: 0;
-    width: 80%;
+    width: 100%;
     justify-content: center;
 }
 .primary-menu{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     list-style-type: none;
-    margin-left: 15%;
-    width: 400px;
+    width: 70%;
 }
-.primary-menu .menu1{
-    margin: 15px 0 15px 0;
-    font-size: 13px;
-    font-weight: 400;
-    color: #4f5665;
+.primary-menu .menu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    height: 50px;
+    padding-left: 10px;
+}
+.primary-menu .menu .menu1{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
     cursor: pointer;
     text-align: center;
-    width: 100%;
+    color: #414141;
     text-decoration: none;
+    margin-left: 40px;
+    height: 35px;
 }
-.primary-menu .menu1:hover{
-    color: #6a4029;
+.primary-menu .menu .menu1:hover{
+    color: #4f5665;
     font-weight: 700;
 }
-.secondary-menu {
-    display: flex;
-    margin-left: 20%;
-    margin-right: 5%;
-}
-.secondary-menu .menu2{
-    font-size: 13px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 600;
-}
-.secondary-menu .menu2.login{
-    color: #000000;
-}
-.secondary-menu .menu2 .signup{
-    background-color: #ffba33;
-    padding: 10px 25px;
-    color: #6a4029;
-    border-radius: 100px;
-    transition-duration: 50ms;
-    width: 100px;
-}
-.secondary-menu .menu2 .signup:hover{
-    background-color: #6a4029;
-    font-weight: 700;
-    box-shadow: 1px 1px 10px #cccccc;
-    color: white;
-    transform: scale(1.1);
-}
-.secondary-menu .menu2 .login:hover{
-    transform: scale(1.1);
-}
-/* logsign */
-.logsignNav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logsignNav .logosign{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    cursor: pointer;
-    transition-duration: 50ms;
-    width: 50%;
-    padding-left: 8%;
-    text-decoration: none;
-    color: #0B132A;
-}
-.logsignNav .logosign:hover{
-    transform: scale(1.1);
-}
-.logsignNav .logosign img{
-    width: 25px;
-    height: 25px;
-    margin-right: 7px;
-}
-.logsignNav .logosign h1{
-    font-size: 15px;
-    font-weight: 800;
-    margin-top: 8px;
-}
-.logsignNav .sc-menu{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 10%;
-}
-.logsignNav .sc-menu .menu{
-    display: flex;
-    list-style-type: none;
-    margin: 15px;
-    margin-left: 0px;
-    font-size: 13px;
-    cursor: pointer;
-}
-.logsignNav .sc-menu .menu a{
-    text-decoration: none;
-    font-weight: 500;
-}
-.logsignNav .sc-menu .menu .signup{
-    background-color: #ffba33;
-    padding: 10px 25px;
-    color: #6a4029;
-    border-radius: 100px;
-    transition-duration: 50ms;
-}
-.logsignNav .sc-menu .menu .signup:hover{
-    background-color: #6a4029;
-    font-weight: 700;
-    box-shadow: 1px 1px 10px #cccccc;
-    color: white;
-    transform: scale(1.1);
-}
-.logsignNav .sc-menu .menu .login{
-    background-color: #ffba33;
-    padding: 10px 25px;
-    color: #6a4029;
-    border-radius: 100px;
-    transition-duration: 50ms;
-}
-.logsignNav .sc-menu .menu .login:hover{
-    background-color: #6a4029;
-    font-weight: 700;
-    box-shadow: 1px 1px 10px #cccccc;
-    color: white;
-    transform: scale(1.1);
-}
-/* product */
-.navbar .navmenu .sec{
-    width: 40%;
-}
-.navbar .navmenu .sec .menu{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    list-style-type: none;
-    margin-left: 20%;
-}
-.navbar .navmenu .sec .menu .search{
-    width: 40%;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 13px;
-    cursor: pointer;
-    background-color: #EFEEEE;
+.primary-menu .menu .menu1:hover::after{
+    content: '';
     border-radius: 20px;
-    margin-right: 6%;
+    display: block;
+    border-bottom: solid 5px #2395FF;
+    width: 50%;
+    margin: 8px auto 0 auto;
 }
-.navbar .navmenu .sec .menu .search input{
+.primary-menu .searchbox{
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+    height: 50px;
+}
+.primary-menu .searchbox .search{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: #F5F5F5;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+.primary-menu .searchbox .search input{
     border: none;
-    background-color: #EFEEEE;
+    background-color: #F5F5F5;
     width: 90%;
-    height: 30px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: left;
     padding: 0 10px;
     font-family: 'Poppins', sans-serif;
-    border-radius: 20px;
+    border-radius: 10px;
+    background-color: transparent;
 }
-.navbar .navmenu .sec .menu .search .srch{
-    margin-left: 5%;
-    width: 15px;
-    height: 15px;
+.primary-menu .searchbox .search .srch{
+    height: 24px;
+    width: 24px;
 }
-.navbar .navmenu .sec .menu .chat{
-    height: 30px;
-    width: 35px;
-    padding: 5px;
-    margin-right: 5%;
+.secondary-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 50px;
+}
+.secondary-menu .type1{
     cursor: pointer;
-}
-.navbar .navmenu .sec .menu .profile{
-    cursor: pointer;
-}
-.navbar .navmenu .sec .menu .chat img{
-    margin-left: 2px;
-}
-.navbar .navmenu .sec .menu .chat:hover{
-    font-weight: 600;
-    transform: scale(1.1);
-}
-.navbar .navmenu .sec .menu .profile:hover{
-    font-weight: 600;
-    transform: scale(1.1);
-}
-.navbar .navmenu .sec .menu .chat .notif{
-    background-color: #6A4029;
-    width: 12px;
-    height: 12px;
-    border-radius: 100px;
-    color: white;
-    font-size: 10px;
-    font-weight: 800;
-    font-family: sans-serif;
+    border-radius: 10px;
+    transition-duration: 50ms;
+    width: 100px;
+    height: 50px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    background-color: #2395FF;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -28px;
-    margin-left: -5px;
+    color: white !important;
+    text-decoration: none;
 }
-
-
+.secondary-menu .type1:hover{
+    transform: scale(1.1);
+}
+.secondary-menu .type2{
+    height: 30px;
+    width: 30px;
+    margin-right: 50px;
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    transition-duration: 50ms;
+    cursor: pointer;
+}
+.secondary-menu .type2:hover{
+    border-bottom: solid 4px #2395FF;
+}
+#tp2{
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+    border: 2px solid;
+    border: solid 2px #00B7DF;
+    padding: 2px;
+    margin-right: 0;
+    margin-top: 0;
+}
+.secondary-menu .type2 .round{
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    margin-left: 13px;
+    margin-bottom: 17px;
+    border-radius: 50px;
+    background-color: #2395FF;
+}
+#r1{
+    margin-left: 17px;
+}
+.secondary-menu .type2 .mail{
+    height: 20px;
+    width: 24px;
+    margin-top: 3px;
+}
+.secondary-menu .type2 .bell{
+    height: 23px;
+    width: 21px;
+    margin-top: 2px;
+    border-radius: 0px;
+}
+.secondary-menu .type2 .profile{
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
 @media  screen and (max-width: 768px) {
     /* landingpage */
     .navbar{
         border-bottom: 2px solid #eeeeee;
         width: 100%;
+        height: 100px;
         margin: 0;
         padding: 0;
-        padding-top: 5px;
-        padding-bottom: 5px;
     }
     .navbar .container-fluid{
         margin: 0;
         padding: 0;
     }
     .bar{
-        background-color: #ffba33 !important;
+        height: 90px;
         margin-right: 5%;
     }
     .bar .baricon{
         color: #6a4029 !important;
     }
-    .coffeelogo{
+    .planelogo{
         display: flex;
-        align-items: flex-start;
+        height: 100px;
+        align-items: center;
         justify-content: flex-start;
         cursor: pointer;
         transition-duration: 50ms;
-        margin-left: 7%;
     }
-    .coffeelogo:hover{
+    .planelogo:hover{
         font-weight: 600;
         transform: scale(1.1);
     }
-    .coffeelogo img{
-        width: 25px;
-        height: 25px;
+    .planelogo img{
+        margin-right: 15px;
     }
-    .coffeelogo h1{
-        font-size: 15px;
-        font-weight: 800;
-        position: relative;
-        left: 11px;
-        margin-top: 7px;
-        color: #6a4029 !important;
+    .planelogo h1{
+        margin-top: 10px;
     }
     .navbar .navmenu{
         margin: 0;
         padding: 0;
         width: 100%;
-        margin-top: 10px;
         background-color: white;
     }
     .navbar .navmenu .primary-menu{
@@ -309,109 +249,50 @@
         margin-left: 0;
         width: 100%;
         display: flex;
+        padding-top: 5px;
     }
-    .navbar .navmenu .primary-menu .menu1{
-        margin: 0;
+    .navbar .navmenu .primary-menu .menu{
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+    .navbar .navmenu .primary-menu .menu .menu1{
         font-size: 13px;
         font-weight: 400;
         color: #4f5665;
         cursor: pointer;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        margin-top: 18px;
+        margin-left: 0;
+        margin-right: 40px;
+        margin: 18px 40px 10px 0;
+        height: 30px;
+    }
+    #m1{
+        margin-right: 0;
+    }
+    .primary-menu .searchbox{
         width: 100%;
-    }
-    .navbar .navmenu .primary-menu .menu1:hover{
-        color: #6a4029;
-        font-weight: 700;
-    }
-    .navbar .navmenu .primary-menu .menu1 a{
-        margin-left: 10px;
+        justify-content: center;
     }
     .navbar .navmenu .secondary-menu {
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        margin-top: 5px;
-        margin-left: 5%;
+        flex-direction: row;
+        align-items: center;
     }
-    .navbar .navmenu .secondary-menu .menu2{
+    .navbar .navmenu .secondary-menu .type1{
         font-size: 13px;
         cursor: pointer;
         text-decoration: none;
         font-weight: 600;
-        margin: 0 0 10px 0;
+        width: 75%;
+        height: 40px;
     }
-    .navbar .navmenu .secondary-menu .menu2 .login{
-        display: flex;
-        color: #000000;
-        padding: 0;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100px;
-        border: 2px solid #ffba33;
-        height: 50px;
-        font-family: rubik;
-        font-size: large;
-        font-weight: 600;
+    .secondary-menu .type2{
+        margin-top: 0;
     }
-    .navbar .navmenu .secondary-menu .menu2 .signup{
-        background-color: #ffba33;
-        padding: 0;
-        height: 50px;
-        color: #6a4029;
-        border-radius: 100px;
-        transition-duration: 50ms;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: rubik;
-        font-size: large;
-        font-weight: 600;
-    }
-    .navbar .navmenu .secondary-menu .menu2 .signup:hover{
-        background-color: #6a4029;
-        font-weight: 700;
-        box-shadow: 1px 1px 10px #cccccc;
-        color: white;
-        transform: scale(1.1);
-    }
-    .navbar .navmenu .secondary-menu .menu2 .login:hover{
-        transform: scale(1.1);
-    }
-    /* logsign */
-    .logsignNav{
-        margin: 20px 20px 0 20px;
-    }
-    .logsignNav .logosign{
-        margin-left: 0;
-        padding: 0;
-    }
-    .logsignNav .sc-menu{
-        padding: 0;
-    }
-    /* product */
-    .navbar .navmenu .sec{
-        width: 100%;
-        height: 50px;
-        padding-left: 10%;
-        justify-content: flex-start;
-    }
-    .navbar .navmenu .sec .menu{
-        margin-top: 10px;
-        margin-left: 0;
-    }
-    .navbar .navmenu .sec .menu .search{
-        width: 60%;
-    }
-    .navbar .navmenu .sec .menu .search input{
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    /* logsign */
-
-    /* product */
-
 }

@@ -18,6 +18,7 @@
     display: flex;
     margin-top: 30px;
     margin-bottom: 100px;
+    width: 100%;
 }
 .lgn .logosign img{
     height: 33px;
@@ -100,7 +101,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: tomato;
     width: 100%;
 }
 .lgn .buttonlgn .btn{
@@ -125,12 +125,48 @@
     cursor: pointer;
     transition-duration: 50ms;
 }
+#sign2{
+    margin-top: 0;
+    background-color: white;
+    border: 1px solid #2395FF;
+    color: #2395FF;
+}
 .lgn .buttonlgn .btn .sign:hover{
     font-weight: 900;
     transform: scale(1.1);
 }
+.lgn .buttonlgn .checkbox{
+    width: 100%;
+    display: flex;
+    margin-top: 35px;
+    padding-left: 10px;
+}
+.lgn .buttonlgn .checkbox .check{
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    border: 2px solid #2395FF;
+    cursor: pointer;
+    margin-right: 15px;
+}
+.lgn .buttonlgn .checkbox p{
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: left;
+    color: #595959;
+    margin-top: 2px;
+}
+.lgn .buttonlgn .textbox{
+    width: 90%;
+    display: flex;
+    padding-top: 15px;
+    margin-top: 30px;
+    justify-content: center;
+    border-top: solid 1px #D8D8D8;
+}
 .lgn .anothersign{
-    /* background-color: thistle; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -172,7 +208,6 @@
     transform: scale(1.1);
 }
 .lgn .anothersign .btn{
-    /* background-color: cadetblue; */
     width: 100%;
 }
 .lgn .anothersign .btn button{
@@ -209,13 +244,6 @@
         height: 60px;
         width: 100%;
     }
-    .lgn .buttonlgn .btn .sign{
-        margin-bottom: 30px;
-        border: none;
-        background-color: #ffba33;
-        width: 100%;
-        height: 60px;
-    }
     .lgn .buttonlgn .btn{
         width: 80%;
     }
@@ -232,6 +260,29 @@
     .lgn{
         width: 100%;
         height: 1000px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .lgn .logosign{
+        width: 80%;
+    }
+    .lgn .formlgn .header{
+        width: 80%;
+    }
+    .lgn .formlgn .signbox .textbox input{
+        width: 85%;
+    }
+    .lgn .buttonlgn .checkbox{
+        width: 80%;
+    }
+    .lgn .buttonlgn .textbox{
+        width: 70%;
+    }
+    .lgn .anothersign{
+        width: 70%;
+        margin: 0;
     }
 }
 

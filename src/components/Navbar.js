@@ -11,7 +11,7 @@ const Navbarmenu=(props)=>{
   const changeSearch=(event)=>{
     setSearch(event.target.value)
   }
-  const submitPrd=(event)=>{
+  const searchResult=(event)=>{
     event.preventDefault();
     sendData()
   }
@@ -21,68 +21,53 @@ const Navbarmenu=(props)=>{
 
   return(
     <div>
-    {props.logsign===false?
     <nav className="navbar navbar-expand-lg navbar-light bg-white">
       <div className="container-fluid">
-        <Link className="navbar-brand coffeelogo" to="/">
-          <img src="https://raw.githubusercontent.com/farizian/week5/master/img/coffee%201.png" alt=""></img>
-          <h1>Coffee Shop</h1>
+        <Link className="navbar-brand planelogo" to="/">
+          <img src="https://raw.githubusercontent.com/farizian/week15/master/img/plane.png" alt=""></img>
+          <h1>Ankasa</h1>
         </Link>
-        <NavbarToggler onClick={toggleNavbar} className="bar mr-2">
-          <span className="navbar-toggler-icon baricon"></span>
+        <NavbarToggler onClick={toggleNavbar} className="bar">
+          <img src="https://raw.githubusercontent.com/farizian/week15/master/img/align-right.png" alt="" className="baricon"></img>
         </NavbarToggler>
         <Collapse className="navmenu" id="navbarNav" isOpen={!collapsed} navbar>
           <ul className="navbar-nav primary-menu">
-            <Link className="menu1 nav-item" to="/">Home</Link>
-            <Link className="menu1 nav-item" to="/product">Product</Link>
-            <Link to="" className="nav-item menu1">Your Cart</Link>
-            <Link to="" className="nav-item menu1">
-              <div className="nav-link active" href="#" aria-disabled="true">History</div>
-            </Link>
-          </ul>
-          {props.product===false?
-          <ul className="navbar-nav secondary-menu">
-            <Link className="menu2 nav-item" to="/login">
-              <div className="login nav-link active">Login</div>
-            </Link>
-            <Link className="menu2 nav-item" to="/signup">
-              <div className="signup nav-link active ">Sign up</div>
-            </Link>
-          </ul>:
-          <ul className="navbar-nav sec">
-            <ul className="menu">
-              <form onSubmit={submitPrd} className="nav-item search">
-                <img onClick={submitPrd} className="srch" src="https://raw.githubusercontent.com/farizian/week5/master/img/searchlogo.png" alt="srch" ></img>
-                <input type="text" onChange={changeSearch} placeholder="Search" name="" value={search}></input>
+            <div className="searchbox">
+              <form onSubmit={searchResult} className="nav-item search">
+                <img onClick={searchResult} className="srch" src="https://raw.githubusercontent.com/farizian/week15/master/img/search.png" alt="srch" ></img>
+                <input type="text" onChange={changeSearch} placeholder="Where you want to go?" name="" value={search}></input>
               </form>
-              <li className="nav-item chat">
-                <img src="https://raw.githubusercontent.com/farizian/week5/master/img/chat%20(1)%201.png" width="20px" height="20px" alt=""/>
-                <div className="notif">1</div>
-              </li>
-              <li className="nav-item profile">
-                <img src="https://raw.githubusercontent.com/farizian/week5/master/img/image%2039.png" width="20" height="23" alt=""/>
-              </li>
+            </div>
+            <div className="menu">
+              <div className="box"></div>
+              <Link className="menu1 nav-item" to="/">Find Ticket</Link>
+              <Link className="menu1 nav-item" id="m1" to="/">My Booking</Link>
+            </div>
+          </ul>
+            {props.navtype===1?
+            <ul className="navbar-nav secondary-menu">
+              <Link className="type1 nav-item" to="/signup">Sign up</Link>
             </ul>
-          </ul>}
+            :<ul className="navbar-nav secondary-menu">
+              <Link className="type2 nav-item" to="">
+                <div className="round" id="r1"></div>
+                <img className="mail" src="https://raw.githubusercontent.com/farizian/week15/master/img/mail.png" alt=""></img>
+              </Link>
+              <Link className="type2 nav-item" to="">
+                <div className="round"></div>
+                <img className="bell" src="https://raw.githubusercontent.com/farizian/week15/master/img/bell.png" alt=""></img>
+              </Link>
+              <Link className="type2 nav-item" id="tp2" to="">
+                <img className="profile" src="https://raw.githubusercontent.com/farizian/week15/master/img/profile.png" alt=""></img>
+              </Link>
+            </ul>
+            }
+          
         </Collapse>
       </div>
-    </nav>:
-    <nav className="logsignNav">
-      <Link className ="logosign" to="/">
-          <img src="https://raw.githubusercontent.com/farizian/week5/master/img/coffee%201.png" alt=""/>
-          <h1>Coffee Shop</h1>
-      </Link>
-      <div className="sc-menu">
-        <ul className="menu">
-          {props.login===true?
-          <Link to="/signup" className="signup">Sign Up</Link>:
-          <Link to="/login" className="login">Login</Link>}
-        </ul>
-      </div>
-    </nav>}
+    </nav>
   </div>
   )
-
 }
 
 export default Navbarmenu;

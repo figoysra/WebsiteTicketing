@@ -6,8 +6,8 @@ const Landing=()=>{
 
   return(
     <div>
-      <Navbar/>
-      <div></div>
+      <Navbar navtype={1}/>
+      <div>body</div>
       <Footer/>
     </div>
   )
