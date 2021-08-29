@@ -87,12 +87,12 @@ const Login = ()=>{
                     <img src="https://raw.githubusercontent.com/farizian/week15/master/img/view%201.png" alt=""></img>
                   </div>
                 </div>
-                <button type="submit">sign</button>         
+                  <button className="btn-lg btnSign" type="submit">Sign In</button>        
               </form>
 
               <div className="buttonlgn">
                 {/* <Link className="btn"> */}
-                  <button className="sign" type="submit">Sign In</button>
+                  {/* <button className="sign" type="submit">Sign In</button> */}
                 {/* </Link> */}
               </div>
               <div className="anothersign">
