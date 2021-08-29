@@ -11,7 +11,7 @@ const Searchpage=()=>{
     <div>
       <Navbar navtype={2}/>
       <div>
-        <div className="container-fluid">
+        <div className="container-fluid body">
           <div className="row">
             <header className="head col-lg-12">
             <div className="container-fluid">
@@ -47,13 +47,13 @@ const Searchpage=()=>{
                     </div>
                   </div>
                 </div>
-                <div className="searchbtn col-lg-6 bg-primary">
-                  Change
+                <div className="searchbtn col-lg-6">
+                  <button>Change Search</button>
                 </div>
               </div>
             </div>
             </header>
-            <aside className="aside col-lg-4 bg-secondary">
+            <aside className="aside col-lg-4">
               <div className="menuside">
                 <p className="filter">Filter</p>
                 <p className="reset">Reset</p>
@@ -191,7 +191,7 @@ const Searchpage=()=>{
                 </div>
               </div>
             </aside>
-            <section className="section col-lg-8 bg-primary">
+            <section className="section col-lg-8">
               <div className="headers">
                 <div className="txt">
                   <h1>Select Ticket</h1>
@@ -231,7 +231,7 @@ const Searchpage=()=>{
                     <img src="https://raw.githubusercontent.com/farizian/week15/master/img/wi-fi.png" alt=""></img>
                   </div>
                   <div className="price">
-                    <p>$ 214,00 /pax</p>
+                    <p><strong>$ 214,00</strong> /pax</p>
                   </div>
                   <div className="btn">
                     <button className="select">
@@ -239,14 +239,14 @@ const Searchpage=()=>{
                     </button>
                   </div>
                 </div>
-                <div class="accordion-item dropdown">
-                  <h2 class="accordion-header h2" id="headingOne">
+                <div className="accordion-item dropdown">
+                  <h2 className="accordion-header h2" id="headingOne">
                     <button class="accordion-button btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Accordion Item #1
+                    View Details
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
+                  <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div className="accordion-body">
                       data
                     </div>
                   </div>
