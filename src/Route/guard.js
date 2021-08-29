@@ -5,7 +5,7 @@ const Guard =({component: Component, ...rest})=>{
   return(
     <Route {...rest} render={
       (props)=>{
-        if (token === '123abc123abc123abcbca123'){
+        if (token === process.env.REACT_APP_TOKEN){
           return <Component {...props}/>
         }else{
           alert('harap login terlebih dahulu')
