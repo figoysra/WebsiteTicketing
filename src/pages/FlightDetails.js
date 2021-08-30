@@ -70,7 +70,7 @@ const Flight = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_URL_API}ticket`, { headers: { token: process.env.REACT_APP_TOKEN } })
+      .get(`${process.env.REACT_APP_URL_API}/ticket`, { headers: { token: process.env.REACT_APP_TOKEN } })
       .then((res) => {
         const data = res.data.data.ticket;
         // console.log(data);
@@ -86,7 +86,7 @@ const Flight = () => {
       });
 
     axios
-      .get(`${process.env.REACT_APP_URL_API}users`, { headers: { token: process.env.REACT_APP_TOKEN } })
+      .get(`${process.env.REACT_APP_URL_API}/users`, { headers: { token: process.env.REACT_APP_TOKEN } })
       .then((res) => {
         const data = res.data.data.users;
         // console.log(data);
@@ -119,7 +119,7 @@ const Flight = () => {
       payment: "Eticket issued"
     }
     console.log(body);
-    axios.post(`${process.env.REACT_APP_URL_API}transaction`, body, {headers: {token: process.env.REACT_APP_TOKEN}})
+    axios.post(`${process.env.REACT_APP_URL_API}/transaction`, body, {headers: {token: process.env.REACT_APP_TOKEN}})
     .then((res) => {
       console.log(res)
       // history.push(`/mybooking`)
@@ -143,7 +143,7 @@ const Flight = () => {
       payment: "Waiting Payment"
     }
     
-    axios.post(`${process.env.REACT_APP_URL_API}transaction`, body, {headers: {token: process.env.REACT_APP_TOKEN}})
+    axios.post(`${process.env.REACT_APP_URL_API}/transaction`, body, {headers: {token: process.env.REACT_APP_TOKEN}})
     .then((res) => {
       console.log(res)
       history.push(`/mybooking`)
@@ -155,9 +155,7 @@ const Flight = () => {
 
   return (
     <div>
-      <div className="navbar1">
-        <Navbar />
-      </div>
+      <Navbar navtype={2} />
       <div className="bg">
         <div className="header w-100">
           <svg
