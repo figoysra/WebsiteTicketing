@@ -65,7 +65,7 @@ const Signup =(props)=>{
               </form>
               <div className="buttonlgn">
                 <div className="btn">
-                  <button className="sign" onClick={submitData}>Sign Up</button>
+                  <button className="sign" type="submit">Sign Up</button>
                 </div>
                 <div className="checkbox">
                   <Input type="checkbox" className="check" name="terms" value={true}>

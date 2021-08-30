@@ -14,17 +14,10 @@ const Login = ()=>{
   }) 
  
 
-  const insertemail = (e) => {
+  const insertData = (e) => {
     setData({
         ...data,
-        username: e.target.value
-      })
-  }
-
-  const insertpass = (e) => {
-    setData({
-        ...data,
-        password: e.target.value
+        [e.target.name]: e.target.value
       })
   }
 
@@ -32,7 +25,7 @@ const Login = ()=>{
   const history = useHistory();
   const login=(e) => {
     e.preventDefault();
-    axios.post('http://localhost:8000/login', data)
+    axios.post(`${process.env.REACT_APP_URL_API}/login`, data)
     .then(function (response) {
         // handle success
         // setData({users:response.data.data.users})
@@ -43,7 +36,7 @@ const Login = ()=>{
          })
          localStorage.setItem("idUsers", id)
          alert("succes")
-         history.push('/searchpage')
+         history.push(`/`)
       })
       .catch(function (error) {
         // handle error
@@ -74,8 +67,8 @@ const Login = ()=>{
                     <input 
                     type="text" 
                     placeholder="Username" 
-                    name="email"
-                    onChange={insertemail} 
+                    name="Username"
+                    onChange={insertData} 
                    >
                   </input>
                   </div>
@@ -84,7 +77,7 @@ const Login = ()=>{
                     type="password" 
                     placeholder="Password" 
                     name="password" 
-                    onChange={insertpass}
+                    onChange={insertData}
                     >
                     </input>
                     <img src="https://raw.githubusercontent.com/farizian/week15/master/img/view%201.png" alt=""></img>
