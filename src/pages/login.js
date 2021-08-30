@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import '../css/logsign/section.css'
-import { useState, useEffect} from "react"
+import { useState} from "react"
 // import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
