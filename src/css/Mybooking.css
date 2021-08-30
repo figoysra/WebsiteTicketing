@@ -1,0 +1,483 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* height: 120vh; */
+}
+
+.myBooking {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.myBooking .users {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myBooking .users .cardUser {
+    margin-top: 50px;
+    width: 100%;
+    height: 93vh;
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+    margin-right: 20px;
+}
+
+.myBooking .users .cardUser .itemCard {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.myBooking .cardUser .outline {
+    width: 180px;
+    height: 180px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    border-radius: 50%;
+    border: 4px solid rgba(35, 149, 255, 1);
+    outline: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.myBooking .users .cardUser .imgUser {
+    width: 150px;
+    height: 150px;
+    object-fit:fill;
+    border-radius: 50%;
+}
+
+.myBooking .users .cardUser .photo {
+    width: 150px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #2395FF;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #2395ff;
+    margin-top: 20px;
+}
+
+.myBooking .users .cardUser .itemCard .name {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+.myBooking .users .cardUser .itemCard .address {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #6B6B6B;
+}
+
+.cc {
+    display: flex ;
+    justify-content: space-between;
+    margin: 30px 20px 0px 20px;
+
+}
+
+.cc .nameCard {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+}
+
+.cc .btnAdd {
+    margin-top: -10px;
+}
+
+.cc .add {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: right;
+    color: #2395FF;
+}
+
+.cc .add:hover {
+    color: #2395FF;
+}
+
+.cardBank {
+    margin: 30px 20px 0px 20px;
+}
+
+.cardBank .cardBlue {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #2395FF;
+    box-shadow: 0px 8px 25px rgba(35, 149, 255, 0.49);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.cardBank .cardBlue .numberCard {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 1.5px;
+    color: #FFFFFF;
+}
+
+.cardBank .cardBlue .cardBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cardBank .cardBlue .cardBody .brandCard {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 22px;
+    color: #AEFAFF;
+}
+
+.cardBank .cardBlue .cardBody .debit {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: right;
+    color: #AEFAFF;
+    margin-left: 110px;
+}
+
+.itemProfile {
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.itemProfile .listProfile {
+    cursor: pointer;
+    border: none !important;
+}
+
+.list-group-item {
+    border-bottom: none !important;
+    margin-bottom: 20px;
+}
+
+.itemProfile .listProfile .review:hover,
+.itemProfile .listProfile .setting:hover {
+    color: #2395FF !important;
+}
+
+.itemProfile .listProfile .profile .iconProfile {
+    color: #2395FF !important;
+    margin-right: 10px;
+}
+
+.itemProfile .listProfile .profile {
+    color: #2395FF !important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.itemProfile .listProfile .review .iconReview,
+.itemProfile .listProfile .setting .iconSetting {
+    color: #979797;
+    margin-right: 10px;
+}
+
+.itemProfile .listProfile .review,
+.itemProfile .listProfile .setting {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.itemProfile .listProfile .logout {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #F24545;
+}
+
+.itemProfile .listProfile .logout .iconLogout {
+    color: #F24545;
+    margin-right: 10px;
+}
+
+.contentLeft {
+    margin-top: 50px;
+}
+
+.contentLeft .cardTitle {
+    width: 100%;
+    height: 115px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.09);
+    border-radius: 15px;
+    padding: 25PX;
+}
+
+.contentLeft .cardTitle .titleHistory {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.3em;
+    color: #2395FF;
+}
+
+.contentLeft .cardTitle .bodyTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentLeft .cardTitle .bodyTitle .title2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.contentLeft .cardTitle .bodyTitle .order {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: #2395FF;
+    margin-top: 15px;
+}
+
+.cardHistory {
+    width: 100%;
+    height: 225px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.09);
+    border-radius: 15px;
+    padding: 30PX;
+    margin-top: 30px;
+}
+
+.cardHistoryActive {
+    width: 100%;
+    height: 450px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.09);
+    border-radius: 15px;
+    padding: 30PX;
+    margin-top: 30px;
+}
+
+.dateBook {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.travel {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.iconAirlane {
+    margin: 0px 10px;
+    color: #979797;
+}
+
+.nameAirlane {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #979797;
+}
+
+.marginCenter {
+    border-bottom: 1px solid rgba(229, 229, 229, 1);
+    margin: 0px -30px;
+}
+
+.details {
+    display: flex !important;
+    flex-direction: column;
+    margin-top: 10PX;
+}
+
+.details .headerDetails {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.details .status {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #7A7A7A;
+    margin-top: 10px;
+    margin-right: 70px;
+}
+
+.details .witing {
+    width: 16%;
+    height: 36px;
+    background: #FF7F23;
+    border-radius: 6px;
+    padding: 5px;
+    margin-right: 58%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.details .eticket {
+    width: 16%;
+    height: 36px;
+    background: #4FCF4D;
+    border-radius: 6px;
+    padding: 5px;
+    margin-right: 58%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.details .vDetails {
+    background: none !important;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: #2395FF;
+    cursor: pointer;
+}
+
+.details .vDetails .iconDetails {
+    margin-left: 20px;
+}
+
+.details .detailsInfo .headInfo {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 22px;
+    color: #A5A5A5;
+}
+
+.details .detailsInfo .toPay {
+    width: 25%;
+    height: 50px;
+    background: #2395FF;
+    box-shadow: 0px 8px 10px rgba(35, 149, 255, 0.3);
+    border-radius: 10px;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+.footer {
+    margin-top: 20px;
+    height: 20vh;
+}
+
+@media screen and (max-width: 768px) {
+
+    .row .users .cardUser {
+        height: 98vh;
+    }
+
+    .cardBank .cardBlue {
+        height: 100px;
+    }
+
+    .cardBank .cardBlue .numberCard {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+    
+    .cardBank .cardBlue .cardBody .brandCard {
+        font-size: 20px;
+        line-height: 22px;
+        margin-top: 10px;
+    }
+    
+    .cardBank .cardBlue .cardBody .debit {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .details .headerDetails {
+        justify-content: flex-start;
+    }
+
+    .cardHistoryActive {
+        height: 530px;
+    }
+
+    .details .status {
+        margin-right: 10px;
+    }
+
+    .details .witing,
+    .details .eticket {
+        width: 45%;
+        margin-right: 0%;
+    }
+
+    .details .vDetails {
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+
+    .details .vDetails .iconDetails {
+        margin-left: 6px;
+    }
+
+    .details .detailsInfo .toPay {
+        width: 60%;
+    }
+}

@@ -1,0 +1,167 @@
+.navbar1{
+    width: 100%;
+    height: 100px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.bg {
+    background-color: #f5f6fa;
+    /* z-index: -1; */
+}
+
+.header {
+    background-color: #2395fe;
+    /* height: 140px; */
+    height: 150px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: absolute;
+}
+
+.header svg {
+    position: absolute;
+    /* top: -20px; */
+    top: -10px;
+    width: 180px;
+}
+
+.form .cardData {
+    margin-top: 50px;
+    position: relative;
+    z-index: 1px;
+}
+
+.form .formData .formcontactPerson {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.inputForm {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: none;
+    /* border-bottom: 1px solid grey; */
+    padding: 5px;
+    border-radius: none;
+    position: relative;
+    margin-left: 5px;
+}
+
+.select {
+    /* width: 50px; */
+    height: 35px;
+    margin-top: 5px;
+    /* padding: 5px; */
+    cursor: pointer;
+    border: none;
+    border-right: 1px solid grey;
+}
+
+.form-control:focus {
+    border-color: none;
+    box-shadow: none;
+}
+
+.hr {
+    margin-top: -12px;
+}
+
+.fs {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+Label {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.dangerInfo {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #feecec;
+}
+
+.dangerInfo svg {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.passengerInfo {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 15px;
+    background-color: #E9F4FF;
+}
+
+.passengerInfoText {
+    font-size: 12px;
+}
+.insurance{
+    color: #2395FF;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cardHeader{
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+.cardHeader p{
+    margin-left: 20px;
+}
+.destination{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.date{
+    font-size: 12px;
+    font-weight: 500px;
+    color:#6B6B6B;
+}
+.fitur{
+    font-size: 14px;
+    font-weight: 600;
+    color: #2395FF
+}
+.payment{
+    font-size: 20px;
+    color: #2395FF;
+    font-weight: 600;
+}
+
+.blue {
+    background-color:  #2395fe;
+}
+
+.btn{
+    border-radius: 5px;
+    border: none;
+}
+
+.btnPayLater,
+.blue:hover {
+    border : 1px solid #2395fe ;
+    background: #fff !important;
+    color: #2395fe;
+}
+
+.btnPayLater:hover {
+    color: #fff;
+    background:  #2395fe !important;
+}
+
+@media screen and (max-width: 576px) {
+    .fs {
+        color: black;
+    }
+}
