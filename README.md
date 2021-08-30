@@ -3,19 +3,19 @@
 
 ## User melakukan register terlebih dahulu di halaman register
 
-(https://github.com/aliefabdussalam/week5/blob/main/regis-ankasa.PNG?raw=true)
+![register](https://github.com/aliefabdussalam/week5/blob/main/regis-ankasa.PNG?raw=true)
 
 ## Setelah berhasil register user  akan diarahkan ke halaman login dan memasukan email dan password yang sudah ditambahkan waktu registrasi
 
-(https://github.com/aliefabdussalam/week5/blob/main/log-ankasa.PNG?raw=true)
+![login](https://github.com/aliefabdussalam/week5/blob/main/log-ankasa.PNG?raw=true)
 
 ## Ketika berhasil login, user diarahkan ke halaman landing page terdapat form search untuk mencari tiket berdasarkan keberangkatan, tujuan dan tanggal keberangkatan
 
-(https://github.com/aliefabdussalam/week5/blob/main/home-ankasa.PNG?raw=true)
+![home](https://github.com/aliefabdussalam/week5/blob/main/home-ankasa.PNG?raw=true)
 
 ## Klik tombol search flight user akan diarahkan ke halaman search flight yang berisi data data penerbangan berdasarkan apa yang dicari di halaman landingpage
 
-(https://github.com/aliefabdussalam/week5/blob/main/home-ankasa.PNG?raw=true)
+![home](https://github.com/aliefabdussalam/week5/blob/main/home-ankasa.PNG?raw=true)
 
 ## Terdapat fitur filter data di halaman search flight dan klik tombol select untuk memesan tiket
 
