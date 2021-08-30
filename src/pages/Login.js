@@ -97,14 +97,15 @@ const Login = ()=>{
                     <img src="https://raw.githubusercontent.com/farizian/week15/master/img/view%201.png" alt=""></img>
                   </div>
                 </div>
-                  <button className="btn-lg btnSign" type="submit">Sign In</button>        
+                  <div className="buttonlgn">
+                    <div className="btn">
+                    <button className="btn-lg sign" type="submit">Sign In</button>
+                    </div>
+                    <Link to="/login" className="mt-5 btn">
+                    <button className="sign" id="sign2">Sign Up</button>
+                    </Link>
+                  </div>       
               </form>
-
-              <div className="buttonlgn">
-                {/* <Link className="btn"> */}
-                  {/* <button className="sign" type="submit">Sign In</button> */}
-                {/* </Link> */}
-              </div>
               <div className="anothersign">
                 <h3 className="forgot">Did you forgot your password?</h3>
                 <h3 className="forgottap">Tap here for reset</h3>
