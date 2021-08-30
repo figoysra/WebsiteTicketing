@@ -41,7 +41,7 @@ const Navbarmenu=(props)=>{
             <div className="menu">
               <div className="box"></div>
               <Link className="menu1 nav-item" to="/">Find Ticket</Link>
-              <Link className="menu1 nav-item" id="m1" to="/">My Booking</Link>
+              <Link className="menu1 nav-item" id="m1" to="/mybooking">My Booking</Link>
             </div>
           </ul>
             {props.navtype===1?

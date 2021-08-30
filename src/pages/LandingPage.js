@@ -7,6 +7,7 @@ import Calendar from 'react-calendar';
 import { Input } from "reactstrap";
 import 'react-calendar/dist/Calendar.css';
 
+
 const Landing = () => {
   const [trending] = useState([
     {
@@ -83,6 +84,8 @@ const Landing = () => {
       img: "https://github.com/aliefabdussalam/learn-html1/blob/master/Taj%20Mahal.png?raw=true",
     },
   ]);
+
+  // eslint-disable-next-line no-unused-vars
   const [trip, setTrip]= useState({
     trip: ""
   })
@@ -115,12 +118,20 @@ const Landing = () => {
           />
         </div>
 
-        <div className="headerRight m-0 p-0 col-4 p-0">
+
+        {/* <div className="headerRight m-0 p-0 col-4 p-0">
           <img
             src="https://raw.githubusercontent.com/farizian/week15/master/img/image4.png"
             alt="pict"
-            className="imgRight"
-          />
+            className="imgRight" */}
+
+        <div className="headerRight m-0 p-0 col-4 p-0">
+          {/* <img
+            src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+            alt="pict"
+            className="imgRight bg-black"
+
+          /> */}
           <img
             src="https://github.com/aliefabdussalam/week6/blob/main/vector%206.png?raw=true"
             alt="p"
@@ -128,6 +139,7 @@ const Landing = () => {
           />
         </div>
       </div>
+
       <div className="srcbox">
           <p className="hey">Hey,</p>
           <p className="where">Where you want to go?</p>
@@ -268,7 +280,11 @@ const Landing = () => {
                   color: "white",
                 }}
               >
-                <img src="https://github.com/aliefabdussalam/learn-html1/blob/master/btnback.png?raw=true" alt=""/>
+
+                <img src="https://github.com/aliefabdussalam/learn-html1/blob/master/btnback.png?raw=true" alt="right"/>
+
+                {/* <img src="https://github.com/aliefabdussalam/learn-html1/blob/master/btnback.png?raw=true" alt="img" /> */}
+
               </div>
             </div>
           ))}
@@ -290,13 +306,14 @@ const Landing = () => {
           </div>
           <div className="d-flex row destbtn">
             <div className="btn rounded col-1 border-white">
-              <img src="https://github.com/aliefabdussalam/learn-html1/blob/master/btnback%20(2).png?raw=true" alt=""/>
+
+              {/* <img src="https://github.com/aliefabdussalam/learn-html1/blob/master/btnback%20(2).png?raw=true" alt="image"/> */}
+
+              <img src="https://github.com/aliefabdussalam/learn-html1/blob/master/btnback%20(2).png?raw=true" alt="imageLeft" />
+ 
             </div>
             <div className="btn-light rounded col-1 offset-1 ">
-              <img
-                style={{ marginTop: "8px", marginLeft: "8px" }}
-                src="https://github.com/aliefabdussalam/learn-html1/blob/master/btnback%20(1).png?raw=true"
-                alt=""/>
+              <img src="https://github.com/aliefabdussalam/learn-html1/blob/master/btnback%20(1).png?raw=true" alt="imageRight" />
             </div>
           </div>
         </div>

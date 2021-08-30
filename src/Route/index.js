@@ -1,9 +1,11 @@
 import { Switch, Route } from 'react-router-dom'
 import Login from '../pages/Login'
-import Signup from '../pages/Signup'
-import Home from '../pages/Landingpage'
-import Searchpage from '../pages/Searchpage'
-import Guard from './guard'
+import SignUp from '../pages/SignUp'
+import Home from '../pages/LandingPage'
+import SearchPage from '../pages/SearchPage'
+import FlightDetail from '../pages/FlightDetails'
+import MyBooking from '../pages/MyBooking'
+import Guard from './Guard'
 
 const Router =()=>{
     return(
@@ -11,10 +13,11 @@ const Router =()=>{
         <Route path="/" exact>
           <Home/>
         </Route>
-        <Route path="/login" exact render={(props)=>(<Login  {...props}/>)}/>
-        <Route path="/signup" exact render={(props)=>(<Signup  {...props}/>)}/>
-        <Guard path="/searchpage" exact component={Searchpage}/>
-        <Guard path="" exact component=""/>
+        <Route path="/login" render={(props)=>(<Login  {...props}/>)}/>
+        <Route path="/signup" render={(props)=>(<SignUp  {...props}/>)}/>
+        <Guard path="/searchpage" component={SearchPage}/>
+        <Guard path="/mybooking" component={MyBooking}/>
+        <Guard path="/flightdetail" component={FlightDetail }/>
         <Route>
           404 NOT FOUND
         </Route>
