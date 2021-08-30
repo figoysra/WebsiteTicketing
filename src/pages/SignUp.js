@@ -11,7 +11,8 @@ const Signup =(props)=>{
   const [user, setUser] = useState({
     username: '',
     email: '',
-    password: ''
+    password: '',
+    admin:'',
   })
   const setData=(event)=>{
     setUser({
@@ -32,7 +33,8 @@ const Signup =(props)=>{
     const data = {
                     username: user.username, 
                     email: user.email, 
-                    password: user.password
+                    password: user.password,
+                    admin: user.admin
                  }
     axios.post(`${process.env.REACT_APP_URL_API}/register`, data)
     .then(function(response){
@@ -87,10 +89,21 @@ const Signup =(props)=>{
                     <input type="password" placeholder="Password" name="password" onChange={setData}></input>
                     <img src="https://raw.githubusercontent.com/farizian/week15/master/img/view%201.png" alt=""></img>
                   </div>
+                  <div>Status</div>
+                  <Input
+                          className="bg-white border-end-0 select"
+                          type="select"
+                          name="admin"
+                          onChange={setData}                 
+                        >
+                          <option value="">Select your option</option>
+                          <option value="0">Admin</option>
+                          <option value="1">User</option>
+                        </Input>
                 </div>
               </form>
               <div className="buttonlgn">
-                <div className="btn">
+                <div className="btn mt-1">
                   <button className="sign" onClick={submitData}>Sign Up</button>
                 </div>
                 <div className="checkbox">
