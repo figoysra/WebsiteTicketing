@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router-dom'
 import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
-import Landing from '../pages/LandingPage'
+import Home from '../pages/LandingPage'
 import SearchPage from '../pages/SearchPage'
 import FlightDetail from '../pages/FlightDetails'
 import MyBooking from '../pages/MyBooking'
@@ -11,7 +11,7 @@ const Router =()=>{
     return(
       <Switch>
         <Route path="/" exact>
-          <Landing/>
+          <Home/>
         </Route>
         <Route path="/login" render={(props)=>(<Login  {...props}/>)}/>
         <Route path="/signup" render={(props)=>(<SignUp  {...props}/>)}/>

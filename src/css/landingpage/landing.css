@@ -1,0 +1,475 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.textHeader {
+    margin-left: 130px;
+    margin-top: 110px;
+}
+
+.text1 {
+    font-size: 54px;
+    font-weight: 600;
+}
+
+.text2 {
+    font-size: 54px;
+    color: #2395FF;
+    font-weight: 600;
+}
+
+.imgLeft {
+
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    margin-top: 90px;
+    object-fit: cover;
+    width: 640px;
+}
+
+.imgRight {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 100%;
+    height: 500px;
+}
+.srcbox{
+    width: 400px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    margin: -55% 0 0 43%;
+    padding: 40px;
+    box-shadow: 0px 8px 27px 0px #0E3F6C30;
+}
+.srcbox .hey{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+}
+.srcbox .where{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+}
+.srcbox .recent{
+    display: flex;
+}
+.srcbox .recent .txt{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+}
+.srcbox .recent p{
+    text-align: end;
+    color: #2395FF;
+    width: 50%;
+    font-size: 30px;
+}
+.srcbox .countryselect{
+    height: 97px;
+    left: 766px;
+    top: 372px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0px 8px 27px 0px #0E3F6C30;
+}
+.srcbox .countryselect .input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+}
+.srcbox .countryselect input{
+    border: none;
+    width: 100px;
+}
+.srcbox .countryselect .city{
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+.srcbox .countryselect .input .txt{
+    width: 100%;
+    font-family: Lato;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: #979797;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+#in2 .txt{
+    justify-content: flex-end;
+}
+#in2{
+    align-items: flex-end;
+}
+#in2 input{
+  text-align: end;
+}
+.srcbox .countryselect img{
+    width: 17px;
+    height: 17px;
+}
+.srcbox .btnbox{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.srcbox .btnbox .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #2395FF;
+    height: 44px;
+    width: 40%;
+    left: 766px;
+    top: 492px;
+    border-radius: 6px;
+    margin-right: 10%;
+}
+.srcbox .btnbox .btn:hover{
+    border: 2px solid rgb(77, 75, 75);
+}
+.srcbox .btnbox .btn p{
+    margin: 0;
+    margin-left: 10px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    color: white;
+}
+#btn2{
+    width: 50%;
+    margin: 0;
+    background-color: #F0F0F0;
+}
+#btn2:hover{
+    border: 2px solid gray;
+}
+#btn2 p{
+    color: #595959;
+}
+.srcbox p{
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    color: #6B6B6B;
+    margin: 10px 0 10px 0;
+}
+.srcbox .departure .item{
+    border-radius: 6px;
+}
+.srcbox .departure .accordion-button{
+    height: 55px;
+}
+.srcbox .departure .accordion-button p{
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0;
+}
+.srcbox .departure .accordion-body{
+    position: absolute;
+    margin-left: -19px;
+}
+.srcbox .person .personinput{
+    display: flex;
+    justify-content: flex-start;
+}
+.srcbox .person .personinput .inputbox{
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    justify-content: center;
+    width: 45%;
+    margin-right: 10%;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid #DDDDDD
+}
+.srcbox .person .personinput .inputbox input{
+    width: 80%;
+    border: none;
+}
+.srcbox .person .personinput .inputbox img{
+    width: 12px;
+    height: 12px;
+}
+#box2{
+    margin: 0;
+}
+.srcbox .class .classbox{
+    display: flex;
+}
+.srcbox .class .classbox .checkbox{
+    display: flex;
+    margin-right: 10px;
+    width: 30%;
+    align-items: center;
+}
+.srcbox .class .classbox .checkbox p{
+    margin: 0;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    color: #000;
+}
+.srcbox .class .classbox .checkbox .check{
+    border-radius: 50%;
+    margin: 0 10px 0 0;
+}
+.srcbox .btnflight{
+    width: 100%;
+    padding: 30px 0 0 0;
+}
+.srcbox .btnflight .searchflight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 10px 0px #2395FF4D;
+    background-color: #2395FF;
+}
+.srcbox .btnflight .searchflight:hover{
+    border: 2px solid rgb(77, 75, 75)
+}
+.srcbox .btnflight .searchflight p{
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    color: white;
+}
+
+.header .headerRight .vector1 {
+    width: 190px;
+    height: 210px;
+    margin-top: 15%;
+    margin-left: -5%;
+    /* transform: rotate(-15deg);
+    background-color: black; */
+
+    object-fit: cover;
+}
+
+.vector1 {
+    width: 190px;
+    height: 210px;
+    margin-left: 70px;
+    margin-top: 80px;
+    transform: rotate(-15deg);
+
+}
+
+.trending {
+    margin-top: 175px;
+
+}
+
+.cardTrending {
+    align-content: center;
+    justify-content: center;
+}
+
+.trendText1 {
+    color: #2395FF;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+}
+
+.trendText2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.trendText3 {
+    font-size: 16px;
+    color: #2395FF;
+    font-weight: 600;
+    text-align: end;
+}
+
+.card {
+    margin-top: 20px;
+    border-radius: 20px;
+    border-style: none;
+    margin-left: 10px;
+}
+
+.imgTrending {
+    border-radius: 20px;
+    height: 262px;
+    object-fit: cover;
+    padding: 0%;
+
+}
+
+.card-img-overlay {
+    position: "absolute";
+    height: "260px";
+    width: "100px";
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+.cardtop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topDestination {
+    background-color: #2395FF;
+
+}
+
+.topDestination {
+    margin-top: 100px;
+    border-radius: 20px;
+    background-image: url('https://github.com/aliefabdussalam/learn-html1/blob/master/vector%203.png?raw=true');
+}
+
+.topDestText {
+    font-size: 14px;
+    color: white;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.topDestText2 {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+}
+
+.destText {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.destcard {
+    margin-top: 60px;
+
+}
+
+.destbtn {
+    justify-content: center;
+    margin-top: 35px;
+    padding-bottom: 35px;
+}
+
+.back {
+    border-style: solid;
+    border: white;
+}
+
+.next {
+    justify-content: center;
+    align-content: center;
+}
+
+@media screen and (max-width: 576px) {
+
+    .header{
+        display: none;
+    }
+    .srcbox{
+        width: 90%;
+        position: unset;
+        background-color: white;
+        border-radius: 20px;
+        margin: 10% 0 0 5%;
+        padding: 40px;
+        box-shadow: 0px 8px 27px 0px #0E3F6C30;
+    }
+    .srcbox .recent .txt{
+        font-size: 14px;
+        text-align: start;
+    }
+    .srcbox .btnbox .btn p{
+        font-size: 11px;
+    }
+    .srcbox .class .classbox .checkbox{
+        margin-top: 10px;
+    }
+    #cb3{
+        margin-right: 0;
+    }
+    .srcbox .class .classbox .checkbox p{
+        font-size: 11px;
+    }
+    .trending {
+        border-right: none !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .trending .cardTrending {
+        width: 100% !important;
+        height: 300px;
+        margin: 0;
+        padding: 20px 0 20px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        overflow-x: scroll;
+    }
+    .topDestination .cardtop{
+        display: flex;
+        flex-direction: row;
+        height: 250px;
+        overflow: scroll;
+    }
+    .topDestination .cardtop .destcard{
+        width: 300px;
+        height: 150px;
+        display: flex;
+
+    .header {
+        display: none;
+    }
+
+    .trending {
+        border-right: none !important;
+        height: 75vh;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+
+    .cardTrending {
+        width: 100% !important;
+        height: 200px !important;
+    }
+}

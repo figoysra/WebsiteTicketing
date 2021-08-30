@@ -57,7 +57,7 @@ const Navbarmenu=(props)=>{
                 <div className="round"></div>
                 <img className="bell" src="https://raw.githubusercontent.com/farizian/week15/master/img/bell.png" alt=""></img>
               </Link>
-              <Link className="type2 nav-item" id="tp2" to="">
+              <Link className="type2 nav-item" id="tp2" to="/mybooking">
                 <img className="profile" src="https://raw.githubusercontent.com/farizian/week15/master/img/profile.png" alt=""></img>
               </Link>
             </ul>
