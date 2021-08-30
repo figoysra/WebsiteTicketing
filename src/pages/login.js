@@ -7,13 +7,30 @@ import {useHistory} from 'react-router-dom'
 
 
 const Login = ()=>{
-
+  const [user, setUser]=useState()
+  const getData =()=>{
+    const headers={
+      headers:{
+        token: 1234
+      }
+    }
+    axios.get(`${process.env.REACT_APP_URL_API}/users`, headers)
+    .then((response)=>{
+      setUser(response.data.data.users)
+      
+    }).catch((err)=>{
+      alert(err)
+    })
+  }
+  useEffect(function () {
+    getData()
+  },[])
   const [data, setData] = useState({
     users: [],
     username: '',
     password: ''
   }) 
- 
+ console.log(user)
 
   const insertData = (e) => {
     setData({
