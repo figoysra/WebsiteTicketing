@@ -9,7 +9,6 @@ import {useHistory} from 'react-router-dom'
 const Login = ()=>{
 
   const [data, setData] = useState({
-    users: [],
     username: '',
     password: ''
   }) 
@@ -37,8 +36,12 @@ const Login = ()=>{
     .then(function (response) {
         // handle success
         // setData({users:response.data.data.users})
-         setData({...data, users: response.data.data.users})
          localStorage.setItem("token", response.data.message.tokenAcces)
+         const usersId = response.data.data.users
+         const id = usersId.map((e) => {
+            return(e.id_users)
+         })
+         localStorage.setItem("idUsers", id)
          alert("succes")
          history.push('/searchpage')
       })
