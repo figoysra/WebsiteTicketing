@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import '../css/logsign/section.css'
-import { useState} from "react"
+import { useState, useEffect} from "react"
 // import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
@@ -26,6 +26,7 @@ const Login = ()=>{
     getData()
   },[])
   const [data, setData] = useState({
+    users: [],
     username: '',
     password: ''
   }) 
@@ -46,12 +47,8 @@ const Login = ()=>{
     .then(function (response) {
         // handle success
         // setData({users:response.data.data.users})
+         setData({...data, users: response.data.data.users})
          localStorage.setItem("token", response.data.message.tokenAcces)
-         const usersId = response.data.data.users
-         const id = usersId.map((e) => {
-            return(e.id_users)
-         })
-         localStorage.setItem("idUsers", id)
          alert("succes")
          history.push(`/`)
       })
@@ -76,7 +73,7 @@ const Login = ()=>{
                 <h1>Ankasa</h1>
               </div>
               <form onSubmit={login} className="formlgn">
-                <div className="header">
+                <div className="headerlogin">
                 <h1>Login</h1>
                 </div>
                 <div className="signbox">

@@ -15,7 +15,7 @@ import { FaPlaneDeparture } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import CurrencyFormat from "react-currency-format";
 import axios from "axios";
-import { API_URL, Token } from "../utils/constants";
+// import { API_URL, Token } from "../utils/constants";
 import moment from "moment";
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -70,7 +70,7 @@ const Flight = () => {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}ticket`, { headers: { token: Token } })
+      .get(`${process.env.REACT_APP_URL_API}ticket`, { headers: { token: process.env.REACT_APP_TOKEN } })
       .then((res) => {
         const data = res.data.data.ticket;
         // console.log(data);
@@ -86,7 +86,7 @@ const Flight = () => {
       });
 
     axios
-      .get(`${API_URL}users`, { headers: { token: Token } })
+      .get(`${process.env.REACT_APP_URL_API}users`, { headers: { token: process.env.REACT_APP_TOKEN } })
       .then((res) => {
         const data = res.data.data.users;
         // console.log(data);
@@ -119,7 +119,7 @@ const Flight = () => {
       payment: "Eticket issued"
     }
     console.log(body);
-    axios.post(`${API_URL}transaction`, body, {headers: {token: Token}})
+    axios.post(`${process.env.REACT_APP_URL_API}transaction`, body, {headers: {token: process.env.REACT_APP_TOKEN}})
     .then((res) => {
       console.log(res)
       // history.push(`/mybooking`)
@@ -143,7 +143,7 @@ const Flight = () => {
       payment: "Waiting Payment"
     }
     
-    axios.post(`${API_URL}transaction`, body, {headers: {token: Token}})
+    axios.post(`${process.env.REACT_APP_URL_API}transaction`, body, {headers: {token: process.env.REACT_APP_TOKEN}})
     .then((res) => {
       console.log(res)
       history.push(`/mybooking`)

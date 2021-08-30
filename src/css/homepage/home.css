@@ -1,0 +1,149 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Poppins', sans-serif;
+}
+.textHeader{
+  margin-left: 130px;
+  margin-top: 110px;
+}
+.text1{
+  font-size: 54px;
+  font-weight: 600;
+}
+.text2{
+  font-size: 54px;
+  color: #2395FF;
+  font-weight: 600;
+}
+.imgLeft{
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-top: 90px;
+  object-fit: cover;
+  width: 640px;
+}
+.imgRight{
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  width: 345px;
+  height: 500px;
+  object-fit: cover;
+}
+.vector1{
+  width: 190px;
+  height: 210px;
+  margin-left: 70px;
+  margin-top: 80px;
+  transform: rotate(-15deg);
+}
+.trending{
+  margin-top: 175px;
+  
+}
+.cardTrending{
+  align-content: center;
+  justify-content: center;
+}
+.trendText1{
+  color: #2395FF;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+}
+.trendText2{
+  font-size: 24px;
+  font-weight: 600;
+}
+.trendText3{
+  font-size: 16px;
+  color: #2395FF;
+  font-weight: 600;
+  text-align: end;
+}
+.card{
+  margin-top: 20px;
+  border-radius: 20px;
+  border-style: none;
+  margin-left: 10px;
+}
+.imgTrending{
+  border-radius: 20px;
+  height: 262px;
+  object-fit: cover;
+  padding: 0%;
+  
+}
+.card-img-overlay{
+  position:"absolute";
+  height:"260px";
+  width:"100px";
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 20px;
+}
+.cardtop{
+  justify-content: center;
+}
+.topDestination{
+  background-color: #2395FF;
+  
+}
+.topDestination{
+  margin-top: 100px;
+  border-radius: 20px;
+  background-image: url('https://github.com/aliefabdussalam/learn-html1/blob/master/vector%203.png?raw=true');
+}
+.topDestText{
+  font-size: 14px;
+  color: white;
+  letter-spacing: 0.3rem;
+  text-align: center;
+  padding-top: 60px;
+}
+.topDestText2{
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+.destText{
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  margin-top: 25px;
+}
+.destcard{
+  margin-top: 60px;
+
+}
+.destbtn{
+  justify-content: center;
+  margin-top: 35px;
+  padding-bottom: 35px;
+}
+.back{
+  border-style: solid;
+  border: white;
+}
+.next{
+  justify-content: center;
+  align-content: center;
+}
+@media screen and (max-width: 576px){
+  .header{
+      display: none;
+  }
+  .trending {
+      border-right: none !important;
+      height: 75vh;
+      overflow-y: hidden;
+      overflow-x: scroll;
+  }
+  
+  .cardTrending {
+      width: 100% !important;
+      height: 200px !important;
+     
+  }
+}

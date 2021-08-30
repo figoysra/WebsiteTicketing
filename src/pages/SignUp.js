@@ -47,7 +47,7 @@ const Signup =(props)=>{
                 <h1>Ankasa</h1>
               </div>
               <form onSubmit={submitData}  className="formlgn">
-                <div className="header">
+                <div className="headerlogin">
                 <h1>Register</h1>
                 </div>
                 <div className="signbox">
