@@ -21,9 +21,11 @@ body {
 }
 
 .imgLeft {
+
     border-top-right-radius: 60px;
     border-bottom-right-radius: 60px;
     margin-top: 90px;
+    object-fit: cover;
     width: 640px;
 }
 
@@ -269,6 +271,17 @@ body {
     margin-left: -5%;
     /* transform: rotate(-15deg);
     background-color: black; */
+
+    object-fit: cover;
+}
+
+.vector1 {
+    width: 190px;
+    height: 210px;
+    margin-left: 70px;
+    margin-top: 80px;
+    transform: rotate(-15deg);
+
 }
 
 .trending {
@@ -385,6 +398,7 @@ body {
 }
 
 @media screen and (max-width: 576px) {
+
     .header{
         display: none;
     }
@@ -442,5 +456,20 @@ body {
         width: 300px;
         height: 150px;
         display: flex;
+
+    .header {
+        display: none;
+    }
+
+    .trending {
+        border-right: none !important;
+        height: 75vh;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+
+    .cardTrending {
+        width: 100% !important;
+        height: 200px !important;
     }
 }
