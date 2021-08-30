@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import '../css/logsign/section.css'
-import { useState, useEffect} from "react"
+import { useState} from "react"
 // import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
@@ -9,23 +9,15 @@ import {useHistory} from 'react-router-dom'
 const Login = ()=>{
 
   const [data, setData] = useState({
-    users: [],
     username: '',
     password: ''
   }) 
  
 
-  const insertemail = (e) => {
+  const insertData = (e) => {
     setData({
         ...data,
-        username: e.target.value
-      })
-  }
-
-  const insertpass = (e) => {
-    setData({
-        ...data,
-        password: e.target.value
+        [e.target.name]: e.target.value
       })
   }
 
@@ -33,14 +25,18 @@ const Login = ()=>{
   const history = useHistory();
   const login=(e) => {
     e.preventDefault();
-    axios.post('http://localhost:8000/login', data)
+    axios.post(`${process.env.REACT_APP_URL_API}/login`, data)
     .then(function (response) {
         // handle success
         // setData({users:response.data.data.users})
-         setData({...data, users: response.data.data.users})
          localStorage.setItem("token", response.data.message.tokenAcces)
+         const usersId = response.data.data.users
+         const id = usersId.map((e) => {
+            return(e.id_users)
+         })
+         localStorage.setItem("idUsers", id)
          alert("succes")
-         history.push('/searchpage')
+         history.push(`/`)
       })
       .catch(function (error) {
         // handle error
@@ -71,8 +67,8 @@ const Login = ()=>{
                     <input 
                     type="text" 
                     placeholder="Username" 
-                    name="email"
-                    onChange={insertemail} 
+                    name="Username"
+                    onChange={insertData} 
                    >
                   </input>
                   </div>
@@ -81,18 +77,18 @@ const Login = ()=>{
                     type="password" 
                     placeholder="Password" 
                     name="password" 
-                    onChange={insertpass}
+                    onChange={insertData}
                     >
                     </input>
                     <img src="https://raw.githubusercontent.com/farizian/week15/master/img/view%201.png" alt=""></img>
                   </div>
                 </div>
-                <button type="submit">sign</button>         
+                  <button className="btn-lg btnSign" type="submit">Sign In</button>        
               </form>
 
               <div className="buttonlgn">
                 {/* <Link className="btn"> */}
-                  <button className="sign" type="submit">Sign In</button>
+                  {/* <button className="sign" type="submit">Sign In</button> */}
                 {/* </Link> */}
               </div>
               <div className="anothersign">
