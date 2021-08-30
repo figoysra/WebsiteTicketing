@@ -3,8 +3,8 @@ import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
 import Home from '../pages/LandingPage'
 import SearchPage from '../pages/SearchPage'
-import FlightDetail from '../pages/FlightDetails'
-import MyBooking from '../pages/MyBooking'
+import FlightDetail from '../pages/Flightdetails'
+import MyBooking from '../pages/Mybooking'
 import Guard from './Guard'
 
 const Router =()=>{

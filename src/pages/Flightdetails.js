@@ -1,4 +1,12 @@
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import axios from 'axios'
+import moment from "moment";
+import CurrencyFormat from "react-currency-format";
+import { FaPlaneDeparture } from "react-icons/fa";
+import { API_URL, Token } from "../utils/constants";
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import {
   Container,
   Row,
@@ -11,72 +19,32 @@ import {
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/FlightDetail.css";
-import { FaPlaneDeparture } from "react-icons/fa";
-import { useHistory } from "react-router-dom";
-import CurrencyFormat from "react-currency-format";
-import axios from "axios";
-// import { API_URL, Token } from "../utils/constants";
-import moment from "moment";
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 
-const Flight = () => {
+const Flight = (props) => {
   const [ticket, setTicket] = useState([]);
 
   const [user, setUser] = useState([]);
 
   const [data, setData] = useState({
     name: user.username,
-    title: user.gender,
-    country: "",
-    phone:""
+    title: "Mr",
+    country: "1",
+    phone: user.phone,
   });
-  
-
-  const [ name, setName ] = useState("")
-  console.log(name);
-  // const [phone, setPhone] = useState()
-  const [same, setSame] = useState(false);
-  
-  // eslint-disable-next-line no-unused-vars
-  const [ checkInsur, setCheckInsur ] = useState(false)
-
-  const [ insurance, setInsurance ] = useState({
-    value: 0
-  })
-
-  const addInsurance = insurance.value !== 0 ? 2 : 0
-
-  const changeCheck = (e) => {
-    const value = e.target.type === "checkbox" ? console.log(e.target.checked) : console.log(e.target.value)
-    if (value === false) {
-      setInsurance({
-        value: 0
-      })
-      
-    } else {
-      setInsurance({
-        value: 1
-      })
-    }
-  }
-
-  const changeHandler = (e) => {
-    setData({
-      // ...data,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   useEffect(() => {
+    const dataUser = localStorage.getItem("idUsers");
+    const dataTicket = localStorage.getItem("ticketID");
+    const idUser = JSON.parse(dataUser);
+    const idTicket = JSON.parse(dataTicket)
     axios
-      .get(`${process.env.REACT_APP_URL_API}/ticket`, { headers: { token: process.env.REACT_APP_TOKEN } })
+      // .get(`${API_URL}ticket`, { headers: { token: Token } })
+      .get(`${API_URL}ticket`)
       .then((res) => {
         const data = res.data.data.ticket;
-        // console.log(data);
         // eslint-disable-next-line array-callback-return
         data.map((e) => {
-          if (e.id_ticket === 1) {
+          if (e.id_ticket === idTicket ) {
             setTicket(e);
           }
         });
@@ -86,13 +54,12 @@ const Flight = () => {
       });
 
     axios
-      .get(`${process.env.REACT_APP_URL_API}/users`, { headers: { token: process.env.REACT_APP_TOKEN } })
+      .get(`${API_URL}users`, { headers: { token: Token } })
       .then((res) => {
         const data = res.data.data.users;
-        // console.log(data);
         // eslint-disable-next-line array-callback-return
         data.map((e) => {
-          if (e.id_users === 6 && e.username !== "admin") {
+          if (e.id_users === idUser && e.username !== "admin") {
             setUser(e);
           }
         });
@@ -100,13 +67,83 @@ const Flight = () => {
       .catch((err) => {
         alert(err);
       });
-
   }, []);
 
-  const history = useHistory()
+  const [same, setSame] = useState(false);
 
-  const submitPay = (e) =>{
-    e.preventDefault()
+  // eslint-disable-next-line no-unused-vars
+  const [checkInsur, setCheckInsur] = useState(false);
+
+  const [insurance, setInsurance] = useState({
+    value: 0,
+  });
+
+  const addInsurance = insurance.value !== 1 ? 0 : 2;
+
+  const doParentControlFromChild = () => {
+    props.parentControl(same);
+  };
+
+  // eslint-disable-next-line no-unused-vars
+  const changeSame = (e) => {
+    setSame(e.target.checked, () => {
+      doParentControlFromChild();
+    });
+  };
+
+  useEffect(() => {
+    if (same === true) {
+      setName(user.username);
+    }
+  }, [same, user.username]);
+
+  const changeCheck = (e) => {
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+
+      if (value !== true) {
+      setInsurance({
+        value: 0,
+      });
+    } else {
+      setInsurance({
+        value: 1,
+      });
+    }
+  };
+
+  const changeHandler = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const [name, setName] = useState("");
+
+  const timeLocal = (time) => {
+    const local = moment(time).local("id");
+    return local;
+  };
+
+  const history = useHistory();
+
+  const getToday = () => {
+    const today = new Date(),
+      date =
+        today.getFullYear() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getDate(),
+      time = today.getHours() + ":" + today.getMinutes();
+    const dateTime = date + "T" + time;
+    return dateTime;
+  };
+
+
+  const submitPay = (e) => {
+    e.preventDefault();
 
     const body = {
       contactPerson: user.id_users,
@@ -116,47 +153,53 @@ const Flight = () => {
       insurance: insurance.value,
       ticket_id: ticket.id_ticket,
       total: ticket.price + addInsurance,
-      payment: "Eticket issued"
-    }
-    console.log(body);
-    axios.post(`${process.env.REACT_APP_URL_API}/transaction`, body, {headers: {token: process.env.REACT_APP_TOKEN}})
-    .then((res) => {
-      console.log(res)
-      // history.push(`/mybooking`)
-    })
-    .catch((err)=>{
-      alert(err);
-    })
-  }
+      payment: "Eticket Issued",
+      orderDate: getToday()
+    };
 
-  const payLater = (e) =>{
-    e.preventDefault()
+    axios
+      .post(`${API_URL}transaction`, body, { headers: { token: Token } })
+      .then((res) => {
+        alert(res.data.message)
+        history.push(`/mybooking`)
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
+  const payLater = (e) => {
+    e.preventDefault();
 
     const body = {
       contactPerson: user.id_users,
       gender: data.title,
-      name: data.name,
+      name: name,
       country_id: data.country,
-      insurance: insurance,
+      insurance: insurance.value,
       ticket_id: ticket.id_ticket,
       total: ticket.price + addInsurance,
-      payment: "Waiting Payment"
-    }
-    
-    axios.post(`${process.env.REACT_APP_URL_API}/transaction`, body, {headers: {token: process.env.REACT_APP_TOKEN}})
-    .then((res) => {
-      console.log(res)
-      history.push(`/mybooking`)
-    })
-    .catch((err)=>{
-      alert(err)
-    })
-  }
+      payment: "Waiting Payment",
+      orderDate: getToday()
+    };
+
+    axios
+      .post(`${API_URL}transaction`, body, { headers: { token: Token } })
+      .then((res) => {
+        alert(res.data.message)
+        history.push(`/mybooking`);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
 
   return (
     <div>
-      <Navbar navtype={2} />
-      <div className="bg">
+      <div className="navbar1">
+        <Navbar />
+      </div>
+      <div className="bg mt-lg-5">
         <div className="header w-100">
           <svg
             width="217"
@@ -206,7 +249,9 @@ const Flight = () => {
                           name="phone"
                           id="phone"
                           value={data.phone}
-                          onChange={(e)=>{changeHandler(e)}}
+                          onChange={(e) => {
+                            changeHandler(e);
+                          }}
                         >
                           <option value="+62">+62</option>
                           <option value="+61">+61</option>
@@ -250,8 +295,7 @@ const Flight = () => {
                             <Label check className="ms-lg-4">
                               <Input
                                 type="checkbox"
-                                // checked={same}
-                                onChange={(e) => setSame(e.target.checked)}
+                                onChange={(e) => changeSame(e)}
                               />{" "}
                               Same as Contact Person
                             </Label>
@@ -279,7 +323,7 @@ const Flight = () => {
                         id="name"
                         name="name"
                         value={name}
-                        onChange={same === false ? e => setName(e.target.value) : setName(user.username)}
+                        onChange={(e) => setName(e.target.value)}
                         className="inputForm"
                       />
                       <hr className="hr" />
@@ -311,7 +355,12 @@ const Flight = () => {
                       <div className="d-flex">
                         <div className="w-50">
                           <Label check className="ms-4">
-                            <Input type="checkbox" value={checkInsur} onChange={(e) => changeCheck(e)}/> Travel Insurance
+                            <Input
+                              type="checkbox"
+                              value={checkInsur}
+                              onChange={(e) => changeCheck(e)}
+                            />{" "}
+                            Travel Insurance
                           </Label>
                         </div>
                         <div className="w-50 d-flex justify-content-end insurance">
@@ -358,7 +407,7 @@ const Flight = () => {
                       <div className="d-flex align-items-center">
                         <img
                           src={ticket.logo}
-                          alt="Garuda"
+                          alt="Logo Airplane"
                           style={{ width: "100px", height: "57px" }}
                         />
                         <p>{ticket.airlane}</p>
@@ -373,20 +422,13 @@ const Flight = () => {
                         </div>
                         <div className="d-flex date ">
                           <p className="ms-0">
-                            {/* {moment(ticket.deptime,' DD/MM/YYYY ').format(" DD/MM/YYYY ")} */}
-                            {moment(`${ticket.deptime}`)
-                              .subtract(1, "day")
-                              .format("dddd, DD MMMM YYYY ")}
+                            {timeLocal(ticket.deptime).format(
+                              "dddd, DD MMMM YYYY "
+                            )}
                           </p>
                           <ul>
                             <li>
-                              {moment(`${ticket.arrivedTime}`)
-                                .subtract(7, "hours")
-                                .format("LT")}{" "}
-                              -{" "}
-                              {moment(`${ticket.deptime}`)
-                                .subtract(7, "hours")
-                                .format("LT")}
+                              {timeLocal(ticket.arrivedTime).format("LT")} - {timeLocal(ticket.deptime).format("LT")}
                             </li>
                           </ul>
                         </div>
