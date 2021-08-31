@@ -5,6 +5,7 @@ import Home from '../pages/LandingPage'
 import SearchPage from '../pages/SearchPage'
 import FlightDetail from '../pages/Flightdetails'
 import MyBooking from '../pages/Mybooking'
+import Dashboard from '../pages/Dashboard'
 import Guard from './Guard'
 
 const Router =()=>{
@@ -16,6 +17,7 @@ const Router =()=>{
         <Route path="/login" render={(props)=>(<Login  {...props}/>)}/>
         <Route path="/signup" render={(props)=>(<SignUp  {...props}/>)}/>
         <Guard path="/searchpage" component={SearchPage}/>
+        <Guard path="/dashboard" component={Dashboard}/>
         <Guard path="/mybooking" component={MyBooking}/>
         <Guard path="/flightdetail" component={FlightDetail }/>
         <Route>

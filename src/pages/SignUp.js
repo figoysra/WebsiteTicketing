@@ -6,7 +6,6 @@ import { Input } from 'reactstrap';
 import axios from "axios";
 
 
-
 const Signup =(props)=>{
   const [user, setUser] = useState({
     username: '',
@@ -30,37 +29,22 @@ const Signup =(props)=>{
   
   const submitData=(event)=>{
     event.preventDefault();
-    const data = {
-                    username: user.username, 
-                    email: user.email, 
-                    password: user.password,
-                    admin: user.admin
-                 }
+    const data =
+    { username: user.username,
+      email: user.email,
+      password: user.password,
+      admin: user.admin}
     axios.post(`${process.env.REACT_APP_URL_API}/register`, data)
     .then(function(response){
       setUser({...data, users: response.data})
-      localStorage.setItem("token", response.data.message.tokenAcces)
+      // localStorage.setItem("token", response.data.message.tokenAcces)
       alert("registrasi berhasil")
-      props.history.push('/')
+      props.history.push('/login')
     })
     .catch(function (error){
       console.log(error);
       alert("registrasi gagal")
     })
-    // const local = localStorage.getItem('user')
-    // const localuser = JSON.parse(local)
-    // if(localuser===null){
-    //   localStorage.setItem('user', JSON.stringify(data))
-    //   props.history.push('/login');
-    // }else{
-    //   if(localuser.email===data.email){
-    //     alert('email sudah digunakan')
-    //   }else{
-    //     localStorage.setItem('user', JSON.stringify(data))
-    //     props.history.push('/login');
-    //   }
-    // }
-    console.log(user)
   }
   return(
     <div>
@@ -91,15 +75,15 @@ const Signup =(props)=>{
                   </div>
                   <div>Status</div>
                   <Input
-                          className="bg-white border-end-0 select"
-                          type="select"
-                          name="admin"
-                          onChange={setData}                 
-                        >
-                          <option value="">Select your option</option>
-                          <option value="0">Admin</option>
-                          <option value="1">User</option>
-                        </Input>
+                    className="bg-white border-end-0 select"
+                    type="select"
+                    name="admin"
+                    onChange={setData}
+                  >
+                    <option value="">Select your option</option>
+                    <option value="0">Admin</option>
+                    <option value="1">User</option>
+                  </Input>
                 </div>
               </form>
               <div className="buttonlgn">

@@ -13,7 +13,7 @@ const Searchpage=()=>{
       <div>
         <div className="container-fluid body">
           <div className="row">
-            <header className="head col-lg-12">
+            <headercard className="headsearch col-lg-12">
             <div className="container-fluid">
               <div className="row">
                 <div className="searchbox col-lg-6">
@@ -28,7 +28,7 @@ const Searchpage=()=>{
                       </div>
                       <div className="txt">
                         <p className="route1">Medan (IDN)</p>
-                        <div className="img">
+                        <div className="img2">
                           <img src="https://raw.githubusercontent.com/farizian/week15/master/img/panah.png" alt=""></img>
                         </div>
                         <p className="route2">Tokyo (JPN)</p>
@@ -52,8 +52,8 @@ const Searchpage=()=>{
                 </div>
               </div>
             </div>
-            </header>
-            <aside className="aside col-lg-4">
+            </headercard>
+            <aside className="asidesearch col-lg-4">
               <div className="menuside">
                 <p className="filter">Filter</p>
                 <p className="reset">Reset</p>
@@ -61,7 +61,7 @@ const Searchpage=()=>{
               <div className="filtercard">
                 <div className="card">
                   <div className="menu">
-                    <p className="header">Transit</p>
+                    <p className="headercard">Transit</p>
                     <p>Direct</p>
                     <p>Transit</p>
                   </div>
@@ -81,7 +81,7 @@ const Searchpage=()=>{
                 </div>
                 <div className="card">
                   <div className="menu">
-                    <p className="header">Facilities</p>
+                    <p className="headercard">Facilities</p>
                     <p>Luggage</p>
                     <p>In-Flight Meal</p>
                     <p>Wi-fi</p>
@@ -106,7 +106,7 @@ const Searchpage=()=>{
                 </div>
                 <div className="card">
                   <div className="menu">
-                    <p className="header">Departure Time</p>
+                    <p className="headercard">Departure Time</p>
                     <p>00:00 - 06:00</p>
                     <p>06:00 - 12:00</p>
                     <p>12:00 - 18:00</p>
@@ -136,7 +136,7 @@ const Searchpage=()=>{
                 </div>
                 <div className="card">
                   <div className="menu">
-                    <p className="header">Time Arrived</p>
+                    <p className="headercard">Time Arrived</p>
                     <p>00:00 - 06:00</p>
                     <p>06:00 - 12:00</p>
                     <p>12:00 - 18:00</p>
@@ -166,7 +166,7 @@ const Searchpage=()=>{
                 </div>
                 <div className="card">
                   <div className="menu">
-                    <p className="header">Airlines</p>
+                    <p className="headercard">Airlines</p>
                     <p>Garuda Indonesia</p>
                     <p>Air Asia</p>
                     <p>Lion Air</p>
@@ -240,7 +240,7 @@ const Searchpage=()=>{
                   </div>
                 </div>
                 <div className="accordion-item dropdown">
-                  <h2 className="accordion-header h2" id="headingOne">
+                  <h2 className="accordion-headercard h2" id="headingOne">
                     <button class="accordion-button btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     View Details
                     </button>
