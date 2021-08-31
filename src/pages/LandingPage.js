@@ -83,6 +83,7 @@ const Landing = () => {
       img: "https://github.com/aliefabdussalam/learn-html1/blob/master/Taj%20Mahal.png?raw=true",
     },
   ]);
+  // eslint-disable-next-line no-unused-vars
   const [trip, setTrip]= useState({
     trip: ""
   })
@@ -306,4 +307,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Landing

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from 'axios'
 import "../css/Mybooking.css";
+import { API_URL, Token } from "../utils/constants";
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-
 import {
   faChevronDown,
   faChevronUp,
@@ -17,82 +18,16 @@ import {
   faUserCircle,
   faWifi,
 } from "@fortawesome/free-solid-svg-icons";
+import moment from "moment";
+import {useHistory} from 'react-router-dom'
+import CurrencyFormat from "react-currency-format";
+
 
 const Mybook = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [user, setUser] = useState([
-    {
-      id: "1",
-      name: "Mike Kowalski",
-      email: "",
-      password: "",
-      noTelp: "",
-      address: "Medan, Indonesia",
-      card: "4441 1235 5512 5551",
-      pict: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      status: "user",
-    },
-  ]);
+  
+  const [users, setUser] = useState([])
 
-  // eslint-disable-next-line no-unused-vars
-  const [transaction, setTransaction] = useState([
-    {
-      id: "1",
-      nameUser: "Mike Kowalski",
-      email: "flightbooking@ankasa.com",
-      password: "",
-      noTelp: "081234567",
-      address: "Medan, Indonesia",
-      gender: "Mr",
-      name: "Mike Kowalski",
-      country: "",
-      insurance: true,
-      total: "2100000",
-      payment: "Waiting for Payment",
-      code_airline: "AB-221",
-      airlane: "Garuda Indonesia",
-      from: "JKT",
-      desti: "JPN",
-      date: "20 July '20",
-      timeDesti: "12:33",
-      dateEsti: "30 March '20",
-      timeEsti: "10:33",
-      price: "2100000",
-      class: "economy",
-      transit: "direct",
-      wifi: true,
-      meal: true,
-      luggage: false,
-    },
-    {
-      id: "2",
-      nameUser: "Mike Kowalski",
-      email: "flightbooking@ankasa.com",
-      password: "",
-      noTelp: "081234567",
-      address: "Medan, Indonesia",
-      gender: "Mr",
-      name: "Mike Kowalski",
-      country: "Indonesian",
-      insurance: true,
-      total: "2100000",
-      payment: "Eticket issued",
-      code_airline: "AB-221",
-      airlane: "Garuda Indonesia",
-      from: "SBY",
-      desti: "SGP",
-      date: "20 July '20",
-      timeDesti: "12:33",
-      dateEsti: "30 March '20",
-      timeEsti: "10:33",
-      price: "3100000",
-      class: "Frist Class",
-      transit: "direct",
-      wifi: true,
-      meal: true,
-      luggage: true,
-    },
-  ]);
+  const [ transaction, setTransaction ] = useState([])
 
   const [active, setActive] = useState(false);
   const toggle = (index) => {
@@ -103,19 +38,102 @@ const Mybook = () => {
 
     setActive(index);
   };
+
+  const dataTransaction = () => {
+    const data = localStorage.getItem("idUsers");
+    const idUser = JSON.parse(data);
+    axios.get(`${API_URL}transaction`, {headers: {token: Token}})
+    .then((res)=>{
+      const data = res.data.data.transaction
+      // eslint-disable-next-line array-callback-return
+      const newData = data.map((e)=>{
+        if (e.id_users === idUser) {
+          return e
+        }
+      })
+      setTransaction(newData)
+    })
+    .catch((err)=>{
+      alert(err)
+    })
+  }
+
+  useEffect(()=>{
+    const data = localStorage.getItem("idUsers");
+    const idUser = JSON.parse(data);
+    axios.get(`${API_URL}users`, {headers: {token: Token}})
+    .then((res)=>{
+      const data = res.data.data.users
+      // eslint-disable-next-line array-callback-return
+      data.map((e)=>{
+        if (e.id_users === idUser && e.username !== "admin") {
+          setUser([e])
+        }
+      })
+    })
+    .catch((err)=> {
+      alert(err)
+    })
+
+    
+    dataTransaction()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+
+    const updPay = (id) => {
+    
+      // eslint-disable-next-line array-callback-return
+      const data = transaction.filter((e) => {
+        if (e.id_transaction === id) {
+          return e
+        }
+      })
+  
+      const newData = data[0]
+      const body = {
+
+        payment: "Eticket Issued",
+        contactPerson: newData.id_users,
+        gender: newData.gender,
+        name: newData.name,
+        country_id: newData.id_country,
+        insurance: newData.insurance,
+        ticket_id: newData.id_ticket,
+        total: newData.total,
+        orderDate: moment(`${newData.orderDate}`).format("YYYY-MM-DD HH:MM"),
+      }
+
+      axios.put(`${API_URL}transaction/${data[0].id_transaction}`, body, {headers:{token: Token}})
+      .then((res) => {
+        alert("Payment " + res.data.message)
+      })
+      .catch((err) => {
+        alert(err)
+      })
+      
+      dataTransaction()
+    }
+
+    const history = useHistory()
+
+    const logOut = () => {
+      localStorage.clear()
+      history.push("/")
+    }
+
   return (
     <div className="container-fluid">
-      <div className="navbar1">
+      <div className=" mb-lg-5 navbar1">
         <Navbar />
       </div>
-      <div className="row myBooking">
+      <div className="row mt-lg-5 mb-lg-5 myBooking">
         <div className="col-lg-2 users">
           <div className=" cardUser">
-            {user.map((e, i) => (
+            {users.map((e, i) => (
               <div key={i} className="itemCard">
                 <div className="outline">
                   <div className="imgRounded">
-                    <img src={e.pict} alt="imageUser" className="imgUser" />
+                    <img src={e.photoProfile} alt="imageUser" className="imgUser" />
                   </div>
                 </div>
 
@@ -123,7 +141,7 @@ const Mybook = () => {
                   Select Photo
                 </button>
 
-                <h3 className="name">{e.name}</h3>
+                <h3 className="name">{e.username}</h3>
                 <p className="address">{e.address}</p>
               </div>
             ))}
@@ -137,10 +155,10 @@ const Mybook = () => {
                 </button>
               </div>
             </div>
-            {user.map((e, i) => (
+            {users.map((e, i) => (
               <div key={i} className="cardBank">
                 <div className="cardBlue">
-                  <h6 className="numberCard">{e.card}</h6>
+                  <h6 className="numberCard">{e.creditCard}</h6>
                   <div className="cardBody">
                     <p className="brandCard">X Card</p>
                     <span className="debit">$ 1,440.2</span>
@@ -174,7 +192,7 @@ const Mybook = () => {
                   />{" "}
                   Setting
                 </ListGroupItem>
-                <ListGroupItem className="logout">
+                <ListGroupItem className="logout" onClick={logOut} >
                   <FontAwesomeIcon
                     icon={faSignOutAlt}
                     size="lg"
@@ -200,24 +218,25 @@ const Mybook = () => {
               {transaction.map((e, i) => (
                 <div
                   key={i}
-                  id={e.id}
+                  id={e.id_ticket}
                   className={active === i ? "cardHistoryActive" : "cardHistory"}
                 >
                   <p className="dateBook">
-                    Monday, {e.date} - {e.timeDesti}
+                    {moment(`${e.orderDate}`).format("dddd, DD MMMM 'YY ")}
+                    
                   </p>
                   <h5 className="travel">
-                    {e.from}{" "}
+                    {e.depature}{" "}
                     <span>
                       <FontAwesomeIcon
                         icon={faPlaneDeparture}
                         className="iconAirlane"
                       />
                     </span>{" "}
-                    {e.desti}
+                    {e.destination}
                   </h5>
                   <p className="nameAirlane">
-                    {e.airlane}, {e.code_airline}
+                    {e.airlane}, {e.codeAirplane}
                   </p>
                   <div className="marginCenter"></div>
                   <div onClick={() => toggle(i)} className="details">
@@ -225,7 +244,7 @@ const Mybook = () => {
                       <p className="status">Status</p>
                       <div
                         className={
-                          e.payment === "Eticket issued" ? "eticket" : "witing"
+                          e.payment === "Eticket Issued" ? "eticket" : "witing"
                         }
                       >
                         <p>{e.payment}</p>
@@ -246,7 +265,7 @@ const Mybook = () => {
                         <div className="row d-flex align-items-center justify-content-center detailsInfo">
                           <div className="col-lg-4 col-6 mt-2 namePassenger">
                             <p className="headInfo">Name :</p>
-                            <p className="fw-bold">{e.name}</p>
+                            <p className="fw-bold">{e.gender} {e.name}</p>
                           </div>
 
                           <div className="col-lg-4 col-6">
@@ -256,30 +275,36 @@ const Mybook = () => {
 
                           <div className="col-lg-4 col-6">
                             <p className="headInfo">Code :</p>
-                            <p className="fw-bold">{e.code_airline}</p>
+                            <p className="fw-bold">{e.codeAirplane}</p>
                           </div>
 
                           <div className="col-lg-4 col-6">
                             <p className="headInfo">Price :</p>
-                            <p className="fw-bold">{e.price}</p>
+                            <CurrencyFormat
+                            value={e.total}
+                            displayType={"text"}
+                            thousandSeparator={true}
+                            prefix={"$ "}
+                            renderText={(value) => <p className="fw-bold">{value},00</p>}
+                          />
                           </div>
 
                           <div className="col-lg-4 col-6">
                             <p className="headInfo">Facility</p>
                             <p className="fw-bold">
-                              {e.meal === true ? (
+                              {e.meal === 0 ? (
                                 <FontAwesomeIcon
                                   icon={faHamburger}
                                   style={{ marginRight: "10px" }}
                                 />
                               ) : null}
-                              {e.wifi === true ? (
+                              {e.wifi === 0 ? (
                                 <FontAwesomeIcon
                                   icon={faWifi}
                                   style={{ marginRight: "10px" }}
                                 />
                               ) : null}
-                              {e.luggage === true ? (
+                              {e.luggage === 0 ? (
                                 <FontAwesomeIcon icon={faSuitcaseRolling} />
                               ) : null}
                             </p>
@@ -287,15 +312,17 @@ const Mybook = () => {
 
                           <div className="col-lg-4 col-6">
                             <p className="headInfo">Luggage :</p>
-                            <p className="fw-bold">{e.luggage === true ? "20 KG" : "0 KG"}</p>
+                            <p className="fw-bold">{e.luggage === 1 ? "20 KG" : "0 KG"}</p>
                           </div>
                           <button
-                            type="button"
+                            type="submit"
                             className={
-                              e.payment === "Eticket issued"
+                              e.payment === "Eticket Issued"
                                 ? "d-none"
                                 : "btn toPay"
                             }
+                            onClick={() => updPay(e.id_transaction)}
+
                           >
                             Proceed to Payment
                           </button>

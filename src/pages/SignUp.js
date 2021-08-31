@@ -19,6 +19,14 @@ const Signup =(props)=>{
       [event.target.name]: event.target.value
     })
   }
+  // eslint-disable-next-line no-unused-vars
+  // const [Tnc, setTnc] = useState(false)
+  // // console.log(Tnc)
+  // const handleTnc = () =>{
+  //   setTnc(true)
+  //   console.log(Tnc)
+  // }
+  
   const submitData=(event)=>{
     event.preventDefault();
     const data =
@@ -70,7 +78,8 @@ const Signup =(props)=>{
                     className="bg-white border-end-0 select"
                     type="select"
                     name="admin"
-                    onChange={setData}>
+                    onChange={setData}
+                  >
                     <option value="">Select your option</option>
                     <option value="0">Admin</option>
                     <option value="1">User</option>
@@ -78,7 +87,7 @@ const Signup =(props)=>{
                 </div>
               </form>
               <div className="buttonlgn">
-                <div className="btn">
+                <div className="btn mt-1">
                   <button className="sign" onClick={submitData}>Sign Up</button>
                 </div>
                 <div className="checkbox">
