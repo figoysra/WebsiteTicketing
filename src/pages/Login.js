@@ -25,7 +25,7 @@ const Login = ()=>{
     getData()
   },[])
   const [data, setData] = useState({
-    users: [],
+    // users: [],
     username: '',
     password: ''
   }) 
@@ -42,17 +42,21 @@ const Login = ()=>{
   const history = useHistory();
   const login=(e) => {
     e.preventDefault();
-    axios.post(`${process.env.REACT_APP_URL_API}/login`, data)
+    const body={
+      username: data.username,
+      password: data.password
+    }
+    axios.post(`http://localhost:8000/login`, body)
     .then(function (response) {
         // handle success
-        localStorage.setItem("token", response.data.message.tokenAcces)
+        localStorage.setItem("token", 1234)
         const usersId = response.data.data.users
         const id = usersId.map((e) => {
            return(e.id_users)
         })
         localStorage.setItem("idUsers", id)
         alert("succes")
-        history.push(`/flightdetail`)
+        history.push(`/dashboard`)
       })
       .catch(function (error) {
         // handle error
