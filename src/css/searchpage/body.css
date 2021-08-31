@@ -5,23 +5,23 @@
 .body{
   background-color: #F5F6FA;
 }
-.head{
+.headsearch{
   height: 176px;
   padding: 0;
   border-radius: 0 0 30px 30px;
   background-color: #2395FF;
   background-image: url(https://raw.githubusercontent.com/farizian/week15/master/img/banner.png);
 }
-.head .searchbox{
+.headsearch .searchbox{
   height: 170px;
   padding: 30px 0 0 9%;
 }
-.head .searchbtn{
+.headsearch .searchbtn{
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-.head .searchbtn button{
+.headsearch .searchbtn button{
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
@@ -34,40 +34,40 @@
   transition: 50ms;
   cursor: pointer;
 }
-.head .searchbtn button:hover{
+.headsearch .searchbtn button:hover{
   transform: scale(1.1);
 }
-.head .searchbox .resultbox{
+.headsearch .searchbox .resultbox{
   width: 340px;
   display: flex;
 }
-.head .searchbox .resultbox .img{
+.headsearch .searchbox .resultbox .img{
   display: flex;
   margin-right: 20px;
   margin-top: -15px;
   align-items: center;
 }
-.head .searchbox .resultbox .textsrc{
+.headsearch .searchbox .resultbox .textsrc{
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-top: 10px;
 }
-.head .searchbox .resultbox .textsrc .txt{
+.headsearch .searchbox .resultbox .textsrc .txt{
   width: 260px;
   display: flex;
   justify-content: center;
 }
-.head .searchbox .resultbox .textsrc .txt .from{
+.headsearch .searchbox .resultbox .textsrc .txt .from{
   width: 50%;
   text-align: start;
 
 }
-.head .searchbox .resultbox .textsrc .txt .to{
+.headsearch .searchbox .resultbox .textsrc .txt .to{
   width: 50%;
   text-align: end;
 }
-.head .searchbox .resultbox .textsrc .txt .route1{
+.headsearch .searchbox .resultbox .textsrc .txt .route1{
   width: 45%;
   text-align: start;
   font-family: Poppins;
@@ -75,7 +75,7 @@
   font-style: normal;
   font-weight: 600;
 }
-.head .searchbox .resultbox .textsrc .txt .img{
+.headsearch .searchbox .resultbox .textsrc .txt .img{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +83,7 @@
   height: 25px;
   margin: 0;
 }
-.head .searchbox .resultbox .textsrc .txt .route2{
+.headsearch .searchbox .resultbox .textsrc .txt .route2{
   width: 45%;
   text-align: end;
   font-family: Poppins;
@@ -91,14 +91,14 @@
   font-style: normal;
   font-weight: 600;
 }
-.head .searchbox .resultbox .textsrc .txt p{
+.headsearch .searchbox .resultbox .textsrc .txt p{
   font-family: Lato;
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
   color: white;
 }
-.head .searchbox .resultbox .textsrc .txt .img2{
+.headsearch .searchbox .resultbox .textsrc .txt .img2{
   width: auto;
   height: 20px;
   display: flex;
@@ -106,15 +106,15 @@
   margin: 0 10px 0 10px;
 }
 /* aside */
-.aside{
+.asidesearch{
   height: 100%;
   background-color: #F5F6FA;
   padding: 30px 5px 0 60px ;
 }
-.aside .menuside{
+.asidesearch .menuside{
   display: flex;
 }
-.aside .menuside .filter{
+.asidesearch .menuside .filter{
   width: 50%;
   font-family: Poppins;
   font-size: 24px;
@@ -123,7 +123,7 @@
   color: black;
   /* background-color: azure; */
 }
-.aside .menuside .reset{
+.asidesearch .menuside .reset{
   display: flex;
   width: 50%;
   align-items: center;
@@ -137,10 +137,10 @@
   transition: 50ms;
   cursor: pointer;
 }
-.aside .menuside .reset:hover{
+.asidesearch .menuside .reset:hover{
   font-weight: 700;
 }
-.aside .filtercard{
+.asidesearch .filtercard{
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -148,40 +148,42 @@
   padding: 20px;
   margin-bottom: 20px;
 }
-.aside .filtercard .card{
+.asidesearch .filtercard .card{
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
   border: none;
   border-bottom: 1px solid #E5E5E5;
+  /* background-color: tomato; */
 }
-.aside .filtercard .card .menu{
+.asidesearch .filtercard .card .menu{
   width: 50%;
   display: flex;
   flex-direction: column;
   /* background-color: violet; */
 }
-.aside .filtercard .card .menu .header{
+.asidesearch .filtercard .card .menu .headercard{
   width: 100%;
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
 }
-.aside .filtercard .card .menu p{
+.asidesearch .filtercard .card .menu p{
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   width: 100%;
+  color: black;
 }
-.aside .filtercard .card .checkbox{
+.asidesearch .filtercard .card .checkbox{
   display: flex;
   flex-direction: column;
   width: 50%;
   /* background-color: yellowgreen; */
 }
-.aside .filtercard .card .checkbox .imgbox{
+.asidesearch .filtercard .card .checkbox .imgbox{
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -189,7 +191,7 @@
   margin-bottom: 19px;
 }
 
-.aside .filtercard .card .squarebox{
+.asidesearch .filtercard .card .squarebox{
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -197,14 +199,14 @@
   /* background-color: whitesmoke; */
   margin-bottom: 15px;
 }
-.aside .filtercard .card .squarebox .check{
+.asidesearch .filtercard .card .squarebox .check{
   height: 20px;
   width: 20px;
   border-radius: 3px;
   border: 2px solid #2395FF;
   cursor: pointer;
 }
-.aside .filtercard .card .check .mark{
+.asidesearch .filtercard .card .check .mark{
   margin-top: -12px;
   margin-left: -6px;
   background-color: transparent;
@@ -417,4 +419,32 @@
   width: 170px;
   background-color: transparent;
   color: #2395FF;
+}
+@media screen and (max-width: 576px) {
+  .headsearch{
+    display: flex;
+    flex-direction: column;
+  }
+  .headsearch .searchbox{
+    width: 100%;
+    height: 130px;
+    padding: 10px 0;
+  }
+  .headsearch .searchbtn{
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .headsearch .searchbox .resultbox{
+    width: 100%;
+    display: flex;
+  }
+  .headsearch .searchbox .resultbox .img{
+    margin-right: 10px;
+  }
+  .headsearch .searchbox .resultbox .img img{
+    width: 40px;
+  }
+  .asidesearch{
+    padding: 30px 20px 0 20px ;
+  }
 }

@@ -17,7 +17,6 @@ const Login = ()=>{
     axios.get(`${process.env.REACT_APP_URL_API}/users`, headers)
     .then((response)=>{
       setUser(response.data.data.users)
-      
     }).catch((err)=>{
       alert(err)
     })
@@ -46,7 +45,6 @@ const Login = ()=>{
     axios.post(`${process.env.REACT_APP_URL_API}/login`, data)
     .then(function (response) {
         // handle success
-        // setData({users:response.data.data.users})
         localStorage.setItem("token", response.data.message.tokenAcces)
         const usersId = response.data.data.users
         const id = usersId.map((e) => {
@@ -103,10 +101,10 @@ const Login = ()=>{
                 </div>
                 <div className="buttonlgn">
                   <div className="btn">
-                  <button className="btn-lg sign" type="submit">Sign In</button>
+                  <button className="btn-lg sign" type="submit">Sign Up</button>
                   </div>
                   <Link to="/login" className="mt-5 btn">
-                  <button className="sign" id="sign2">Sign Up</button>
+                  <button className="sign" id="sign2">Sign In</button>
                   </Link>
                 </div>
               </form>
