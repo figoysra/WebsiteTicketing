@@ -124,7 +124,7 @@
 .secondary-menu {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     width: 30%;
     height: 50px;
 }
@@ -180,6 +180,11 @@
     margin-bottom: 17px;
     border-radius: 50px;
     background-color: #2395FF;
+}
+.secondary-menu .type2 .dashboard{
+    width: 30px;
+    height: 33px;
+    margin-top: -4px;
 }
 #r1{
     margin-left: 17px;

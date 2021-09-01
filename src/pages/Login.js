@@ -1,35 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import '../css/logsign/section.css'
-import { useState, useEffect} from "react"
-import {Link} from 'react-router-dom'
+import {useState} from "react"
 import axios from 'axios'
-import {useHistory} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
+import {API_URL} from "../utils/constants";
 
 
 const Login = ()=>{
-  const [user, setUser]=useState()
-  const getData =()=>{
-    const headers={
-      headers:{
-        token: 1234
-      }
-    }
-    axios.get(`${process.env.REACT_APP_URL_API}/users`, headers)
-    .then((response)=>{
-      setUser(response.data.data.users)
-    }).catch((err)=>{
-      alert(err)
-    })
-  }
-  useEffect(function () {
-    getData()
-  },[])
+
   const [data, setData] = useState({
-    // users: [],
     username: '',
     password: ''
-  }) 
- console.log(user)
+  })
 
   const insertData = (e) => {
     setData({
@@ -39,26 +21,26 @@ const Login = ()=>{
   }
 
   console.log(data)
+  console.log(API_URL)
+
   const history = useHistory();
-  const login=(e) => {
+  const submitLogin=(e) => {
     e.preventDefault();
-    const body={
-      username: data.username,
-      password: data.password
-    }
-    axios.post(`http://localhost:8000/login`, body)
-    .then(function (response) {
+    axios.post(`${API_URL}login`, data)
+    .then((response) => {
         // handle success
-        localStorage.setItem("token", 1234)
-        const usersId = response.data.data.users
-        const id = usersId.map((e) => {
+        localStorage.setItem("token", response.data.message.tokenAcces)
+        const users = response.data.data.users
+        const id = users.map((e) => {
            return(e.id_users)
         })
+        const admin = users.map((e)=>{return(e.admin)})
         localStorage.setItem("idUsers", id)
+        localStorage.setItem('admin', admin)
         alert("succes")
-        history.push(`/dashboard`)
+        history.push(`/`)
       })
-      .catch(function (error) {
+      .catch((error) => {
         // handle error
         console.log(error);
         alert("username/password salah")
@@ -78,18 +60,18 @@ const Login = ()=>{
                 <img src="https://raw.githubusercontent.com/farizian/week15/master/img/plane.png" alt=""></img>
                 <h1>Ankasa</h1>
               </div>
-              <form onSubmit={login} className="formlgn">
+              <form onSubmit={submitLogin} className="formlgn">
                 <div className="headerlogin">
-                <h1>Login</h1>
+                <h1 className>Login</h1>
                 </div>
                 <div className="signbox">
                   <div className="textbox">
                     <input 
                     type="text" 
-                    placeholder="Username" 
-                    name="Username"
+                    placeholder="username" 
+                    name="username"
                     onChange={insertData} 
-                   >
+                    >
                   </input>
                   </div>
                   <div className="textbox">
