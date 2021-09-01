@@ -1,35 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import '../css/logsign/section.css'
-import { useState, useEffect} from "react"
-import {Link} from 'react-router-dom'
+import {useState} from "react"
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
+import {API_URL} from "../utils/constants";
 
 
 const Login = ()=>{
-  const [user, setUser]=useState()
-  const getData =()=>{
-    const headers={
-      headers:{
-        token: 1234
-      }
-    }
-    axios.get(`${process.env.REACT_APP_URL_API}/users`, headers)
-    .then((response)=>{
-      setUser(response.data.data.users)
-    }).catch((err)=>{
-      alert(err)
-    })
-  }
-  useEffect(function () {
-    getData()
-  },[])
+
   const [data, setData] = useState({
-    users: [],
     username: '',
     password: ''
-  }) 
- console.log(user)
+  })
 
   const insertData = (e) => {
     setData({
@@ -39,22 +21,24 @@ const Login = ()=>{
   }
 
   console.log(data)
+  console.log(API_URL)
+
   const history = useHistory();
-  const login=(e) => {
+  const submitLogin=(e) => {
     e.preventDefault();
-    axios.post(`${process.env.REACT_APP_URL_API}/login`, data)
-    .then(function (response) {
+    axios.post(`${API_URL}login`, data)
+    .then((response) => {
         // handle success
         localStorage.setItem("token", response.data.message.tokenAcces)
-        const usersId = response.data.data.users
-        const id = usersId.map((e) => {
+        const users = response.data.data.users
+        const id = users.map((e) => {
            return(e.id_users)
         })
         localStorage.setItem("idUsers", id)
         alert("succes")
-        history.push(`/flightdetail`)
+        history.push(`/`)
       })
-      .catch(function (error) {
+      .catch((error) => {
         // handle error
         console.log(error);
         alert("username/password salah")
@@ -74,7 +58,7 @@ const Login = ()=>{
                 <img src="https://raw.githubusercontent.com/farizian/week15/master/img/plane.png" alt=""></img>
                 <h1>Ankasa</h1>
               </div>
-              <form onSubmit={login} className="formlgn">
+              <form onSubmit={submitLogin} className="formlgn">
                 <div className="headerlogin">
                 <h1>Login</h1>
                 </div>
@@ -82,10 +66,10 @@ const Login = ()=>{
                   <div className="textbox">
                     <input 
                     type="text" 
-                    placeholder="Username" 
-                    name="Username"
+                    placeholder="username" 
+                    name="username"
                     onChange={insertData} 
-                   >
+                    >
                   </input>
                   </div>
                   <div className="textbox">
@@ -101,11 +85,11 @@ const Login = ()=>{
                 </div>
                 <div className="buttonlgn">
                   <div className="btn">
-                  <button className="btn-lg sign" type="submit">Sign Up</button>
+                  <button className="btn-lg sign" >Sign Up</button>
                   </div>
-                  <Link to="/login" className="mt-5 btn">
-                  <button className="sign" id="sign2">Sign In</button>
-                  </Link>
+                  <div className="mt-5 btn">
+                  <button className="sign" type="submit" id="sign2">Sign In</button>
+                  </div>
                 </div>
               </form>
               <div className="anothersign">
