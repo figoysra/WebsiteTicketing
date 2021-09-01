@@ -60,7 +60,7 @@ const Login = ()=>{
               </div>
               <form onSubmit={submitLogin} className="formlgn">
                 <div className="headerlogin">
-                <h1>Login</h1>
+                <h1 className>Login</h1>
                 </div>
                 <div className="signbox">
                   <div className="textbox">
@@ -85,10 +85,10 @@ const Login = ()=>{
                 </div>
                 <div className="buttonlgn">
                   <div className="btn">
-                  <button className="btn-lg sign" >Sign Up</button>
+                  <button className="btn-lg sign" >Sign In</button>
                   </div>
-                  <div className="mt-5 btn">
-                  <button className="sign" type="submit" id="sign2">Sign In</button>
+                  <div className="mt-3 btn">
+                  <button className="sign" type="submit" id="sign2">Sign Up</button>
                   </div>
                 </div>
               </form>
