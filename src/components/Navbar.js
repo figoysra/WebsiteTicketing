@@ -44,11 +44,15 @@ const Navbarmenu=(props)=>{
               <Link className="menu1 nav-item" id="m1" to="/mybooking">My Booking</Link>
             </div>
           </ul>
-            {props.navtype===1?
+            {props.token!==1234?
             <ul className="navbar-nav secondary-menu">
               <Link className="type1 nav-item" to="/signup">Sign up</Link>
             </ul>
             :<ul className="navbar-nav secondary-menu">
+              {props.admin===0?
+              <Link className="type2 nav-item" to="/dashboard">
+                <img className="dashboard" src="https://raw.githubusercontent.com/farizian/week15/master/img/dashboard.png" alt=""></img>
+              </Link>:null}
               <Link className="type2 nav-item" to="">
                 <div className="round" id="r1"></div>
                 <img className="mail" src="https://raw.githubusercontent.com/farizian/week15/master/img/mail.png" alt=""></img>

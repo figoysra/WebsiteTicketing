@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import '../css/logsign/section.css'
 import {useState} from "react"
 import axios from 'axios'
-import {useHistory} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import {API_URL} from "../utils/constants";
 
 
@@ -34,7 +34,9 @@ const Login = ()=>{
         const id = users.map((e) => {
            return(e.id_users)
         })
+        const admin = users.map((e)=>{return(e.admin)})
         localStorage.setItem("idUsers", id)
+        localStorage.setItem('admin', admin)
         alert("succes")
         history.push(`/`)
       })
@@ -60,7 +62,7 @@ const Login = ()=>{
               </div>
               <form onSubmit={submitLogin} className="formlgn">
                 <div className="headerlogin">
-                <h1>Login</h1>
+                <h1 className>Login</h1>
                 </div>
                 <div className="signbox">
                   <div className="textbox">

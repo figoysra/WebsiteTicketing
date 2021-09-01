@@ -39,7 +39,7 @@ const Flight = (props) => {
     const idTicket = JSON.parse(dataTicket)
     axios
       // .get(`${API_URL}ticket`, { headers: { token: Token } })
-      .get(`${API_URL}ticket`)
+      .get(`${API_URL}/ticket`)
       .then((res) => {
         const data = res.data.data.ticket;
         // eslint-disable-next-line array-callback-return
@@ -54,7 +54,7 @@ const Flight = (props) => {
       });
 
     axios
-      .get(`${API_URL}users`, { headers: { token: Token } })
+      .get(`${API_URL}/users`, { headers: { token: Token } })
       .then((res) => {
         const data = res.data.data.users;
         // eslint-disable-next-line array-callback-return
