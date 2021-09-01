@@ -42,7 +42,7 @@ const Mybook = () => {
   const dataTransaction = () => {
     const data = localStorage.getItem("idUsers");
     const idUser = JSON.parse(data);
-    axios.get(`${API_URL}transaction`, {headers: {token: Token}})
+    axios.get(`${API_URL}/transaction`, {headers: {token: Token}})
     .then((res)=>{
       const data = res.data.data.transaction
       // eslint-disable-next-line array-callback-return
@@ -61,7 +61,7 @@ const Mybook = () => {
   useEffect(()=>{
     const data = localStorage.getItem("idUsers");
     const idUser = JSON.parse(data);
-    axios.get(`${API_URL}users`, {headers: {token: Token}})
+    axios.get(`${API_URL}/users`, {headers: {token: Token}})
     .then((res)=>{
       const data = res.data.data.users
       // eslint-disable-next-line array-callback-return
@@ -103,7 +103,7 @@ const Mybook = () => {
         orderDate: moment(`${newData.orderDate}`).format("YYYY-MM-DD HH:MM"),
       }
 
-      axios.put(`${API_URL}transaction/${data[0].id_transaction}`, body, {headers:{token: Token}})
+      axios.put(`${API_URL}/transaction/${data[0].id_transaction}`, body, {headers:{token: Token}})
       .then((res) => {
         alert("Payment " + res.data.message)
       })
