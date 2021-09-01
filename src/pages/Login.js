@@ -56,10 +56,12 @@ const Login = ()=>{
             <aside className="asdlogin col-lg-7">
             </aside>
             <section className="lgn col-lg-5">
+            <Link to="/" className="logosign">
               <div className="logosign">
                 <img src="https://raw.githubusercontent.com/farizian/week15/master/img/plane.png" alt=""></img>
                 <h1>Ankasa</h1>
               </div>
+              </Link>
               <form onSubmit={submitLogin} className="formlgn">
                 <div className="headerlogin">
                 <h1 className>Login</h1>
