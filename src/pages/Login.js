@@ -87,11 +87,11 @@ const Login = ()=>{
                 </div>
                 <div className="buttonlgn">
                   <div className="btn">
-                  <button className="btn-lg sign" type="submit">Sign Up</button>
+                  <button className="btn-lg sign" >Sign Up</button>
                   </div>
-                  <Link to="/login" className="mt-5 btn">
-                  <button className="sign" id="sign2">Sign In</button>
-                  </Link>
+                  <div className="mt-5 btn">
+                  <button className="sign" type="submit" id="sign2">Sign In</button>
+                  </div>
                 </div>
               </form>
               <div className="anothersign">
