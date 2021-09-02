@@ -56,10 +56,12 @@ const Login = ()=>{
             <aside className="asdlogin col-lg-7">
             </aside>
             <section className="lgn col-lg-5">
+            <Link to="/" className="logosign">
               <div className="logosign">
                 <img src="https://raw.githubusercontent.com/farizian/week15/master/img/plane.png" alt=""></img>
                 <h1>Ankasa</h1>
               </div>
+              </Link>
               <form onSubmit={submitLogin} className="formlgn">
                 <div className="headerlogin">
                 <h1 className>Login</h1>
@@ -87,10 +89,10 @@ const Login = ()=>{
                 </div>
                 <div className="buttonlgn">
                   <div className="btn">
-                  <button className="btn-lg sign" >Sign Up</button>
+                  <button className="btn-lg sign" >Sign In</button>
                   </div>
-                  <div className="mt-5 btn">
-                  <button className="sign" type="submit" id="sign2">Sign In</button>
+                  <div className="mt-3 btn">
+                  <button className="sign" type="submit" id="sign2">Sign Up</button>
                   </div>
                 </div>
               </form>
