@@ -1,0 +1,493 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap'); */
+
+.body{
+    background-color: #F5F6FA;
+  }
+  .head{
+    height: 176px;
+    padding: 0;
+    border-radius: 0 0 30px 30px;
+    background-color: #2395FF;
+    background-image: url(https://raw.githubusercontent.com/farizian/week15/master/img/banner.png);
+  }
+  
+  .head .searchbtn{
+    padding: 30px;
+  }
+  .head .searchbtn .btnChange{
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    text-align: right;
+    color: white;
+    border: none;
+    background-color: transparent;
+    margin-right: 50px;
+    transition: 50ms;
+    cursor: pointer;
+  }
+  .head .searchbtn button:hover{
+    transform: scale(1.1);
+  }
+  
+  .head .searchbox .resultbox {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .head .searchbox .resultbox .img{
+    display: flex;
+    margin-right: 20px;
+    margin-top: 30px;
+    align-items: center;
+  }
+  
+  .head .searchbox .resultbox .textsrc{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .head .searchbox .resultbox .textsrc .txtHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .head .searchbox .resultbox .textsrc .txtHeader .from{
+    color: white;
+  }
+  
+  .head .searchbox .resultbox .textsrc .txtHeader .to{
+    color: white;
+  }
+  
+  .head .searchbox .resultbox .textsrc .txt {
+    display: flex;
+    justify-content: space-between !important;
+  }
+  
+  .head .searchbox .resultbox .textsrc .txt .route1{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  .head .searchbox .resultbox .textsrc .txt .arrowRoute{
+    width: 17px;
+    height: 17px;
+    color: #fff;
+    margin-top: -20px;
+  }
+  
+  .head .searchbox .resultbox .textsrc .txt .route2{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .head .searchbox .resultbox .textsrc .txt p{
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    color: white;
+  }
+  
+  .head .searchbox .resultbox .textsrc .txtDate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    color: white;
+    margin-right: 15px;
+  }
+  
+  /* aside */
+  .asideFilter {
+    width: 20%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .asideFilter .menuside .filter{
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    color: black;
+  }
+  .asideFilter .menuside .reset{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    color: #2395FF;
+    transition: 50ms;
+    cursor: pointer;
+  }
+  .asideFilter .menuside .reset:hover{
+    font-weight: 700;
+  }
+  .asideFilter .filtercard{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .asideFilter .filtercard .cardFilter{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #E5E5E5;
+  }
+  .asideFilter .filtercard .cardFilter .menu{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  .asideFilter .filtercard .cardFilter .menu .headerSearch{
+    width: 100%;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .asideFilter .filtercard .cardFilter .menu p{
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    width: 100%;
+  }
+  .asideFilter .filtercard .cardFilter .checkbox{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  .asideFilter .filtercard .cardFilter .checkbox .imgbox{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 19px;
+  }
+  
+  .asideFilter .filtercard .cardFilter .squarebox{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .asideFilter .filtercard .cardFilter .squarebox .check{
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    border: 2px solid #2395FF;
+    cursor: pointer;
+  }
+  .asideFilter .filtercard .cardFilter .check .mark{
+    margin-top: -12px;
+    margin-left: -6px;
+    background-color: transparent;
+    font-size: 28px;
+  }
+  
+  /* section */
+  .section{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .section .headers{
+    display: flex;
+  }
+  .section .headers .txt{
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
+  .section .headers .selectTicket{
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0 10px 0 0;
+  }
+  .section .headers .totalTicket{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    color: #595959;
+    margin: 0;
+  }
+  .section .headers .sortby{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+  }
+  .section .headers .sortby .sort{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0px;
+  }
+  .section .headers .sortby img{
+    height: 17px;
+    width: 17px;
+    margin-left: 15px;
+  }
+  .section .cardticket{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 22px;
+    padding: 30px;
+  }
+  .section .cardticket .flightlogo{
+    display: flex;
+    align-items: center;
+  }
+  .section .cardticket .flightlogo img {
+    width: 100px;
+    height: 57px;
+    margin-right: 30px;
+  }
+  .section .cardticket .flightlogo .nameAirplane{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+    color: #595959;
+  }
+  .section .cardticket .menubar{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding: 0;
+  }
+  .section .cardticket .menubar .country{
+    display: flex;
+  }
+  .section .cardticket .menubar .country .row{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  .section .cardticket .menubar .country .row .country1{
+    color: black;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .section .cardticket .menubar .country .row .time{
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: #6B6B6B;
+    margin: 0;
+  }
+  .section .cardticket .menubar .country .img{
+    width: 19px;
+    height: 18px;
+    margin: 5px 15px 0 15px;
+  }
+  .section .cardticket .menubar .time{
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 40px; */
+    color: #6B6B6B;
+  }
+  .section .cardticket .menubar .time .detailtime{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    margin-top: 7px;
+  }
+  .section .cardticket .menubar .time .transit{
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 5px;
+  }
+  .section .cardticket .menubar .facilitieslogo{
+    display: flex;
+    align-items: center;
+    color: #6B6B6B;
+  }
+  
+  .section .cardticket .menubar .price{
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 20px;
+  }
+  .section .cardticket .menubar .price p{
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+  }
+  .section .cardticket .menubar .price strong{
+    color: #2395FF;
+  }
+  .section .cardticket .menubar .btn{
+    display: flex;
+    width: 150px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+  }
+  .section .cardticket .menubar .btn .select{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    color: white;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #2395FF;
+    box-shadow: 0px 8px 10px 0px #2395FF4D;
+    border: none;
+    transition: 50ms;
+    cursor: pointer;
+  }
+  .section .cardticket .menubar .btn .select:hover{
+    transform: scale(1.1);
+  }
+  .section .cardticket .dropdown{
+    border: none;
+  }
+  .section .cardticket .dropdown .h2View .btn{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    /* width: 170px; */
+    background-color: transparent;
+    color: #2395FF;
+  }
+  
+  .footerSearchPage {
+    margin-top: 20px;
+    background-color: #fff;
+  }
+  
+  @media screen and (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+    }
+    .body{
+      width: 100%;
+    }
+  
+    .head{
+      height: 200px;
+      padding: 0;
+    }
+  
+    .head .searchbox .resultbox .textsrc{
+      width: 100%;
+    }
+    
+    .head .searchbox .resultbox .textsrc .txt{
+      width: 100%;
+      display: flex;
+      justify-content: space-between !important;
+    }
+    
+    .head .searchbox .resultbox .textsrc .txt .from{
+      width: 100%;
+    
+    }
+    
+    .head .searchbox .resultbox .textsrc .txt .to{
+      width: 100%;
+    }
+  
+    .head .searchbox .resultbox .img{
+      display: flex;
+      margin-right: 20px;
+      margin-top: -45px;
+      align-items: center;
+    }
+  
+    .head .searchbtn{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: -20px;
+    }
+    
+    .section .headers {
+      width: 100%;
+    }
+    
+    .section .headers .txt {
+      width: 100%;
+    }
+  
+    .section .headers .selectTicket{
+      width: 95%;
+      font-size: 18px;
+    }
+    .section .headers .totalTicket{
+      width: 75%;
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      color: #595959;
+      margin: 0;
+    }
+  
+    .asideFilter {
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+  
+    .section .headers .txt{
+      width: 100%;
+    }
+  
+    .controlPrice {
+      margin-left: -15px;
+    }
+  
+    .section .cardticket .dropdown .h2View {
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+  }

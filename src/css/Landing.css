@@ -5,8 +5,8 @@ body {
 }
 
 .textHeader {
-    margin-left: 130px;
-    margin-top: 110px;
+    margin-left: 100px;
+    margin-top: 130px;
 }
 
 .text1 {
@@ -20,31 +20,56 @@ body {
     font-weight: 600;
 }
 
+.headerlanding{
+    display: flex;
+    width: 100%;
+}
+.headerLeft{
+    width: 50%;
+}
+.headerRight{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.headerlanding .headerRight .vector1 {
+    width: 190px;
+    height: 210px;
+    margin-top: 15%;
+    margin-left: -5%;
+   margin-right: 30%;
+}
+
 .imgLeft {
     border-top-right-radius: 60px;
     border-bottom-right-radius: 60px;
     margin-top: 90px;
-    width: 640px;
+    width: 100%;
 }
 
 .imgRight {
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-    width: 100%;
-    height: 500px;
+    margin-top: 30px;
+    width: 60%;
+    justify-content: end;
 }
 .srcbox{
-    width: 400px;
+    width: 30%;
+    height: 100%;
     position: absolute;
     background-color: white;
     border-radius: 20px;
-    margin: -55% 0 0 43%;
+    margin: -55% 0 0 47%;
     padding: 40px;
     box-shadow: 0px 8px 27px 0px #0E3F6C30;
 }
 .srcbox .hey{
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 500;
     margin: 0;
@@ -63,7 +88,7 @@ body {
     display: flex;
     align-items: center;
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 600;
 }
@@ -71,10 +96,10 @@ body {
     text-align: end;
     color: #2395FF;
     width: 50%;
-    font-size: 30px;
+    font-size: 2rem;
 }
 .srcbox .countryselect{
-    height: 97px;
+    height: 15%;
     left: 766px;
     top: 372px;
     border-radius: 12px;
@@ -96,14 +121,14 @@ body {
 }
 .srcbox .countryselect .city{
     font-family: Poppins;
-    font-size: 20px;
+    font-size: 1.3rem;
     font-style: normal;
     font-weight: 600;
 }
 .srcbox .countryselect .input .txt{
     width: 100%;
     font-family: Lato;
-    font-size: 12px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     color: #979797;
@@ -121,13 +146,13 @@ body {
   text-align: end;
 }
 .srcbox .countryselect img{
-    width: 17px;
-    height: 17px;
+    width: 10%;
 }
 .srcbox .btnbox{
     display: flex;
     margin-top: 20px;
     margin-bottom: 10px;
+    height: 7%;
 }
 .srcbox .btnbox .btn{
     display: flex;
@@ -135,7 +160,7 @@ body {
     justify-content: center;
     border: none;
     background-color: #2395FF;
-    height: 44px;
+    height: 100%;
     width: 40%;
     left: 766px;
     top: 492px;
@@ -154,6 +179,49 @@ body {
     font-weight: 600;
     color: white;
 }
+/*  */
+@media screen and (min-width: 1900px) {
+    .textHeader {
+        margin-left: 100px;
+        margin-top: 130px;
+    }
+    .srcbox{
+        margin: -50% 0 0 47%;
+    }
+    .srcbox .btnbox .btn p{
+        font-size: 20px;
+    }
+    .person{
+        height: 15%;
+     }
+     .personinput{
+         height: 30% !important;
+     }
+     .srcbox p{
+         font-size: 25px;
+     }
+     .srcbox .class .classbox .checkbox p{
+        font-size: 25px !important;
+    }
+    .srcbox .departure .accordion-button p{
+        font-family: Lato;
+        font-size: 1.5rem !important;
+        font-style: normal;
+        margin: 0;
+    }
+    .srcbox .btnflight .searchflight p{
+        font-family: Poppins;
+        font-size: 30px !important;
+        font-style: normal;
+        font-weight: 500 !important;
+        color: white;
+    }
+    .srcbox .btnflight .searchflight{
+        height: 90px;
+    }
+}
+/*  */
+
 #btn2{
     width: 50%;
     margin: 0;
@@ -167,32 +235,34 @@ body {
 }
 .srcbox p{
     font-family: Poppins;
-    font-size: 14px;
     font-style: normal;
     font-weight: 500;
     color: #6B6B6B;
     margin: 10px 0 10px 0;
 }
+.departure{
+    height: 15%;
+    margin-top: 5%;
+}
 .srcbox .departure .item{
     border-radius: 6px;
 }
-.srcbox .departure .accordion-button{
-    height: 55px;
-}
 .srcbox .departure .accordion-button p{
     font-family: Lato;
-    font-size: 14px;
+    font-size: 1rem;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     margin: 0;
 }
 .srcbox .departure .accordion-body{
     position: absolute;
     margin-left: -19px;
 }
+
 .srcbox .person .personinput{
     display: flex;
     justify-content: flex-start;
+    height: 20%;
 }
 .srcbox .person .personinput .inputbox{
     display: flex;
@@ -203,7 +273,7 @@ body {
     margin-right: 10%;
     padding: 5px;
     background-color: white;
-    border: 1px solid #DDDDDD
+    border: 1px solid #DDDDDD;
 }
 .srcbox .person .personinput .inputbox input{
     width: 80%;
@@ -239,7 +309,7 @@ body {
 }
 .srcbox .btnflight{
     width: 100%;
-    padding: 30px 0 0 0;
+    padding: 10px 0 0 0;
 }
 .srcbox .btnflight .searchflight{
     display: flex;
@@ -262,22 +332,12 @@ body {
     color: white;
 }
 
-.headerlanding .headerRight .vector1 {
-    width: 190px;
-    height: 210px;
-    margin-top: 15%;
-    margin-left: -5%;
-    /* transform: rotate(-15deg);
-    background-color: black; */
-}
-
 .trending {
     margin-top: 175px;
 
 }
 
 .cardTrending {
-    align-content: center;
     justify-content: center;
 }
 
@@ -316,28 +376,24 @@ body {
 }
 
 .card-img-overlay {
-    position: "absolute";
-    height: "260px";
-    width: "100px";
     margin-right: 10px;
     margin-left: 10px;
     border-radius: 20px;
 }
 
-.cardtop {
-    display: flex;
-    align-items: center;
+.destCard{
     justify-content: center;
-}
-
-.topDestination {
-    background-color: #2395FF;
-
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 5px;
 }
 
 .topDestination {
     margin-top: 100px;
     border-radius: 20px;
+    background-color: #2395FF;
     background-image: url('https://github.com/aliefabdussalam/learn-html1/blob/master/vector%203.png?raw=true');
 }
 
@@ -363,9 +419,13 @@ body {
     margin-top: 25px;
 }
 
-.destcard {
-    margin-top: 60px;
-
+.imgdest {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 100px;
+    object-position: center;
 }
 
 .destbtn {
@@ -384,7 +444,7 @@ body {
     align-content: center;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
     .headerlanding{
         display: none;
     }
@@ -423,24 +483,39 @@ body {
     }
 
     .trending .cardTrending {
-        width: 100% !important;
-        height: 300px;
-        margin: 0;
-        padding: 20px 0 20px 0;
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        overflow-x: scroll;
+        justify-content: flex-start;
+        overflow-x: auto;
     }
-    .topDestination .cardtop{
-        display: flex;
-        flex-direction: row;
-        height: 250px;
-        overflow: scroll;
+
+    .cardtrendingBody{
+        min-width:fit-content;
     }
-    .topDestination .cardtop .destcard{
-        width: 300px;
-        height: 150px;
+
+    .topDestination {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .topDestination .destCard {
         display: flex;
+        justify-content: flex-start;
+        overflow: auto;
+        width: 100%;
+    }
+
+    .destCard .destcardBody{
+        margin-top: 40px;
+        margin-right: 30px;
+        margin-left: 20px;
+        
+    }
+    .destCard .destcardBody .destImage {
+        width: 100px;
+        height: 100px;
+    }
+    .destCard .destcardBody .destImage img:hover{
+        border: 5px solid white;
     }
 }

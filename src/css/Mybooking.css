@@ -4,6 +4,13 @@ body {
     /* height: 120vh; */
 }
 
+/* .navbar1{
+    width: 100%;
+    height: 100px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+} */
+
 .myBooking {
     display: flex;
     justify-content: center;
@@ -47,7 +54,7 @@ body {
 .myBooking .users .cardUser .imgUser {
     width: 150px;
     height: 150px;
-    object-fit:fill;
+    /* object-fit: fill; */
     border-radius: 50%;
 }
 
@@ -336,7 +343,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .details .status {
@@ -344,10 +352,8 @@ body {
     font-weight: 600;
     font-size: 14px;
     line-height: 22px;
-    text-align: center;
     color: #7A7A7A;
     margin-top: 10px;
-    margin-right: 70px;
 }
 
 .details .witing {
@@ -356,7 +362,7 @@ body {
     background: #FF7F23;
     border-radius: 6px;
     padding: 5px;
-    margin-right: 58%;
+    /* margin-right: 58%; */
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -371,7 +377,7 @@ body {
     background: #4FCF4D;
     border-radius: 6px;
     padding: 5px;
-    margin-right: 58%;
+    /* margin-right: 58%; */
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -426,7 +432,7 @@ body {
 @media screen and (max-width: 768px) {
 
     .row .users .cardUser {
-        height: 98vh;
+        height: 825px;
     }
 
     .cardBank .cardBlue {
@@ -449,34 +455,35 @@ body {
         margin-top: 10px;
     }
 
-    .details .headerDetails {
-        justify-content: flex-start;
+    .cardHistory {
+        height: 250px;
     }
 
     .cardHistoryActive {
-        height: 530px;
+        height: 595px;
     }
 
     .details .status {
-        margin-right: 10px;
+        margin-right: 0px;
     }
 
     .details .witing,
     .details .eticket {
-        width: 45%;
+        width: 70%;
         margin-right: 0%;
     }
 
     .details .vDetails {
-        margin-top: 10px;
-        margin-left: 15px;
+        text-align: start;
+        margin-top: 15px;
+        margin-left: 0px;
     }
 
     .details .vDetails .iconDetails {
-        margin-left: 6px;
+        margin-left: 10px;
     }
 
     .details .detailsInfo .toPay {
-        width: 60%;
+        width: 100%;
     }
 }

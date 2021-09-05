@@ -5,7 +5,6 @@ import axios from 'axios'
 import "../css/Mybooking.css";
 import { API_URL, Token } from "../utils/constants";
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import {
   faChevronDown,
   faChevronUp,
@@ -19,8 +18,9 @@ import {
   faWifi,
 } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
-import {useHistory} from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 import CurrencyFormat from "react-currency-format";
+import Footer from "../components/Footer";
 
 
 const Mybook = () => {
@@ -28,8 +28,9 @@ const Mybook = () => {
   const [users, setUser] = useState([])
 
   const [ transaction, setTransaction ] = useState([])
-
+  
   const [active, setActive] = useState(false);
+
   const toggle = (index) => {
     if (active === index) {
       //if clicked question is already active, then close it
@@ -42,26 +43,31 @@ const Mybook = () => {
   const dataTransaction = () => {
     const data = localStorage.getItem("idUsers");
     const idUser = JSON.parse(data);
-    axios.get(`${API_URL}/transaction`, {headers: {token: Token}})
+    axios.get(`${API_URL}transaction`, {headers: {token: Token}})
     .then((res)=>{
       const data = res.data.data.transaction
+      
       // eslint-disable-next-line array-callback-return
-      const newData = data.map((e)=>{
-        if (e.id_users === idUser) {
-          return e
-        }
+    const result =  data.filter(e => {
+        return !(e.id_users !== idUser)
       })
-      setTransaction(newData)
-    })
+    setTransaction(result)
+  })
+
     .catch((err)=>{
       alert(err)
     })
   }
-
+  
+  const token = localStorage.getItem("token");
+  
   useEffect(()=>{
     const data = localStorage.getItem("idUsers");
     const idUser = JSON.parse(data);
-    axios.get(`${API_URL}/users`, {headers: {token: Token}})
+
+    dataTransaction()
+    
+    axios.get(`${API_URL}users`, {headers: {token: Token}})
     .then((res)=>{
       const data = res.data.data.users
       // eslint-disable-next-line array-callback-return
@@ -75,8 +81,6 @@ const Mybook = () => {
       alert(err)
     })
 
-    
-    dataTransaction()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
@@ -91,7 +95,6 @@ const Mybook = () => {
   
       const newData = data[0]
       const body = {
-
         payment: "Eticket Issued",
         contactPerson: newData.id_users,
         gender: newData.gender,
@@ -103,7 +106,7 @@ const Mybook = () => {
         orderDate: moment(`${newData.orderDate}`).format("YYYY-MM-DD HH:MM"),
       }
 
-      axios.put(`${API_URL}/transaction/${data[0].id_transaction}`, body, {headers:{token: Token}})
+      axios.put(`${API_URL}transaction/${data[0].id_transaction}`, body, {headers:{token: Token}})
       .then((res) => {
         alert("Payment " + res.data.message)
       })
@@ -117,16 +120,17 @@ const Mybook = () => {
     const history = useHistory()
 
     const logOut = () => {
-      localStorage.clear()
+      localStorage.removeItem("token")
       history.push("/")
     }
-
+    
   return (
     <div className="container-fluid">
-      <div className=" mb-lg-5 navbar1">
-        <Navbar />
+      <div className="navbar1">
+        <Navbar token={token} />
+        {/* <Link to="/flightdetail"> flight detail </Link> */}
       </div>
-      <div className="row mt-lg-5 mb-lg-5 myBooking">
+      <div className="row myBooking">
         <div className="col-lg-2 users">
           <div className=" cardUser">
             {users.map((e, i) => (
@@ -240,16 +244,16 @@ const Mybook = () => {
                   </p>
                   <div className="marginCenter"></div>
                   <div onClick={() => toggle(i)} className="details">
-                    <div className="accordion-header headerDetails">
-                      <p className="status">Status</p>
+                    <div className="row accordion-header headerDetails">
+                      <p className="col-lg-1 col-3 status">Status</p>
                       <div
                         className={
-                          e.payment === "Eticket Issued" ? "eticket" : "witing"
+                          e.payment === "Eticket Issued" ? "col-lg-6 col-9 eticket" : "col-lg-6 col-9 witing"
                         }
                       >
                         <p>{e.payment}</p>
                       </div>
-                      <p className=" vDetails">
+                      <p className="col-lg-6 col-12 vDetails">
                         View Details
                         <span className="iconDetails">
                           {active === i ? (

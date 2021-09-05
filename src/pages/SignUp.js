@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import '../css/logsign/section.css'
+import '../css/Login.css'
 import { useState } from "react"
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import { Input } from 'reactstrap';
 import axios from "axios";
 
@@ -11,6 +11,7 @@ const Signup =(props)=>{
     username: '',
     email: '',
     password: '',
+    photoProfile: 'https://th.bing.com/th/id/OIP.1LRUIB2OXVePxD5hQm4fqwHaHa?w=184&h=184&c=7&r=0&o=5&pid=1.7',
     admin:'1',
   })
   const setData=(event)=>{
@@ -19,26 +20,21 @@ const Signup =(props)=>{
       [event.target.name]: event.target.value
     })
   }
-  // eslint-disable-next-line no-unused-vars
-  // const [Tnc, setTnc] = useState(false)
-  // // console.log(Tnc)
-  // const handleTnc = () =>{
-  //   setTnc(true)
-  //   console.log(Tnc)
-  // }
-  console.log(`${process.env.REACT_APP_API_URL}`)
+  const history = useHistory()
+  
   const submitData=(event)=>{
     event.preventDefault();
     axios.post(`${process.env.REACT_APP_API_URL}register`, user)
     .then(function(response){
       localStorage.setItem("token", response.data.message.tokenAcces)
       alert("registrasi berhasil")
-      props.history.push('/')
-      localStorage.setItem("idUsers", response.data.data.insertid)
+      history.push('/')
+      
+      localStorage.setItem("idUsers", response.data.data.insertId)
     })
     .catch(function (error){
-      console.log(error);
-      alert("registrasi gagal")
+      
+      alert(`${error } registrasi gagal`)
     })
   }
   return(
@@ -70,17 +66,6 @@ const Signup =(props)=>{
                     <input type="password" placeholder="Password" name="password" onChange={setData}></input>
                     <img src="https://raw.githubusercontent.com/farizian/week15/master/img/view%201.png" alt=""></img>
                   </div>
-                  {/* <div>Status</div>
-                  <Input
-                    className="bg-white border-end-0 select"
-                    type="select"
-                    name="admin"
-                    onChange={setData}
-                  >
-                    <option value="">Select your option</option>
-                    <option value="0">Admin</option>
-                    <option value="1">User</option>
-                  </Input> */}
                 </div>
               </form>
               <div className="buttonlgn">
@@ -95,7 +80,7 @@ const Signup =(props)=>{
                 <div className="textbox">
                   <p>Already have an account?</p>
                 </div>
-                <Link to="/" className="btn">
+                <Link to="/login" className="btn">
                   <button className="sign" id="sign2">Sign In</button>
                 </Link>
               </div>

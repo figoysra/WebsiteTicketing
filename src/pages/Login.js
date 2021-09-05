@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import '../css/logsign/section.css'
+import '../css/Login.css'
 import {useState} from "react"
 import axios from 'axios'
 import {Link, useHistory} from 'react-router-dom'
@@ -20,9 +20,6 @@ const Login = ()=>{
       })
   }
 
-  console.log(data)
-  console.log(API_URL)
-
   const history = useHistory();
   const submitLogin=(e) => {
     e.preventDefault();
@@ -37,14 +34,18 @@ const Login = ()=>{
         const admin = users.map((e)=>{return(e.admin)})
         localStorage.setItem("idUsers", id)
         localStorage.setItem('admin', admin)
-        alert("succes")
+        // alert("succes")
         history.push(`/`)
       })
       .catch((error) => {
         // handle error
-        console.log(error);
-        alert("username/password salah")
+        
+        alert(`${error } username/password salah`)
       })
+  }
+
+  const signUp = () => {
+    history.push("/signup")
   }
 
 
@@ -92,7 +93,7 @@ const Login = ()=>{
                   <button className="btn-lg sign" >Sign In</button>
                   </div>
                   <div className="mt-3 btn">
-                  <button className="sign" type="submit" id="sign2">Sign Up</button>
+                  <button className="sign" type="button" id="sign2" onClick={signUp}>Sign Up</button>
                   </div>
                 </div>
               </form>

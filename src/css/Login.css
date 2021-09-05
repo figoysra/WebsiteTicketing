@@ -22,7 +22,8 @@ body{
     display: flex;
     padding-top: 5px;
     width: 100%;
-    text-decoration: none !important
+    text-decoration: none !important;
+    
 }
 .lgn .logosign img{
     height: 33px;
@@ -252,7 +253,7 @@ body{
     }
     .lgn{
         width: 70%;
-        
+        height: 100vh;
         margin: 0;
         padding: 0;
     }
@@ -294,7 +295,6 @@ body{
     }
     .lgn{
         width: 100%;
-        
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -322,4 +322,3 @@ body{
         margin-top: 20px;
     }
 }
-
