@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import axios from 'axios'
 import moment from "moment";
 import CurrencyFormat from "react-currency-format";
@@ -21,6 +21,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/FlightDetail.css";
 
 const Flight = (props) => {
+
+  const { idTicket } = useParams()
+
   const [ticket, setTicket] = useState([]);
 
   const [user, setUser] = useState([]);
@@ -31,30 +34,30 @@ const Flight = (props) => {
     country: "1",
     phone: user.phone,
   });
-
-  useEffect(() => {
-    const dataUser = localStorage.getItem("idUsers");
-    const dataTicket = localStorage.getItem("ticketID");
-    const idUser = JSON.parse(dataUser);
-    const idTicket = JSON.parse(dataTicket)
+  
+  const dataTicket = () => {
     axios
-      // .get(`${API_URL}ticket`, { headers: { token: Token } })
-      .get(`${API_URL}/ticket`)
+      .get(`${API_URL}ticket/${idTicket}`, { headers: { token: Token } })
       .then((res) => {
-        const data = res.data.data.ticket;
-        // eslint-disable-next-line array-callback-return
-        data.map((e) => {
-          if (e.id_ticket === idTicket ) {
-            setTicket(e);
-          }
-        });
+        const data = res.data.data
+        const tick = data[0]
+        setTicket(tick)
+
       })
       .catch((err) => {
         alert(err);
       });
+  }
+
+  
+  useEffect(() => {
+    const dataUser = localStorage.getItem("idUsers");
+    const idUser = JSON.parse(dataUser);
+    
+    dataTicket()
 
     axios
-      .get(`${API_URL}/users`, { headers: { token: Token } })
+      .get(`${API_URL}users`, { headers: { token: Token } })
       .then((res) => {
         const data = res.data.data.users;
         // eslint-disable-next-line array-callback-return
@@ -67,6 +70,7 @@ const Flight = (props) => {
       .catch((err) => {
         alert(err);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [same, setSame] = useState(false);
@@ -194,12 +198,14 @@ const Flight = (props) => {
       });
   };
 
+  const token = localStorage.getItem("token");
+
   return (
     <div>
-      <div className="navbar1">
-        <Navbar />
+      <div className="navbarDetails">
+      <Navbar token={token} />
       </div>
-      <div className="bg mt-lg-5">
+      <div className="bg">
         <div className="header w-100">
           <svg
             width="217"
@@ -428,7 +434,7 @@ const Flight = (props) => {
                           </p>
                           <ul>
                             <li>
-                              {timeLocal(ticket.arrivedTime).format("LT")} - {timeLocal(ticket.deptime).format("LT")}
+                              {timeLocal(ticket.deptime).format("HH:mm")} - {timeLocal(ticket.arrivedTime).format("HH:mm")}
                             </li>
                           </ul>
                         </div>
@@ -458,7 +464,7 @@ const Flight = (props) => {
           </Container>
         </div>
       </div>
-      <div className="footer">
+      <div className="footerDetails">
         <Footer />
       </div>
     </div>

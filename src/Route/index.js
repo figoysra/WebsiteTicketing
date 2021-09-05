@@ -11,18 +11,29 @@ import Guard from './Guard'
 const Router =()=>{
     return(
       <Switch>
+        
         <Route path="/" exact>
           <Home/>
         </Route>
+        
+        <Route path="/searchpage" exact>
+          <SearchPage/>
+        </Route>
+        
         <Route path="/login" render={(props)=>(<Login  {...props}/>)}/>
+        
         <Route path="/signup" render={(props)=>(<SignUp  {...props}/>)}/>
-        <Guard path="/searchpage" component={SearchPage}/>
+        
         <Guard path="/dashboard" component={Dashboard}/>
+        
         <Guard path="/mybooking" component={MyBooking}/>
-        <Guard path="/flightdetail" component={FlightDetail }/>
+        
+        <Guard path="/flightdetail/:idTicket" component={FlightDetail }/>
+        
         <Route>
           404 NOT FOUND
         </Route>
+
       </Switch>
     )
 }

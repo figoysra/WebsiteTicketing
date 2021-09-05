@@ -1,14 +1,14 @@
-.card{
+.card1{
     padding: 20px;
     border-radius: 5px;
     flex-direction: column;
 }
-.card h1{
+.card1 h1{
     font-size: 30px;
     font-weight: 700;
     color: white;
 }
-.card p{
+.card1 p{
     font-size: 15px;
     font-weight: 500;
     font-size: 15px;
@@ -20,13 +20,17 @@
     opacity: 25%;
 }
 .tbllistFlight{
-    position: relative;
+    /* position: relative; */
+    position: unset;
 }
 .tblScroll Table{
     width: 100%;
 }
 .tblScroll th{
     padding: 10px;
+    width: 100%;
+}
+.listcountry .tablecountry{
     width: 100%;
 }
 #btncountry{
@@ -39,11 +43,11 @@
     font-size: 15px;
 }
 #btnadmin{
-    margin-left: 160px;
+    margin-left: 40px;
     margin-bottom: 20px;
 }
 #tbl3{
-    margin-left: 150px;
+    margin-left: 30px;
 }
 .remove{
     width: 30px;
@@ -70,4 +74,44 @@
 }
 .fs-15{
     font-size: 12px;
+}
+@media screen and (max-width: 576px){
+    .card{
+        padding: 0;
+        border-radius: 5px;
+        flex-direction: column;
+    }
+    .title{
+        margin-left: 13px;
+        margin-top: 5px;
+        width: 86px !important;
+        text-align: center;
+    }
+    .card h1{
+        font-size: 15px;
+        font-weight: 600;
+        color: white;
+    }
+    .card p{
+        font-size: 10px;
+        font-weight: 500;
+        color: white;
+        text-align: left;
+    }
+    #m22{
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+    .icon{
+        width: 30px;
+        height: auto;
+        opacity: 25%;
+    }
+    #btnadmin{
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    #tbl3{
+        margin-left: 0;
+    }
 }
