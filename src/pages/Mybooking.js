@@ -120,7 +120,7 @@ const Mybook = () => {
     const history = useHistory()
 
     const logOut = () => {
-      localStorage.removeItem("token")
+      localStorage.removeItem("token", "admin")
       history.push("/")
     }
     

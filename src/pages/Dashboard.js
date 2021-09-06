@@ -1203,7 +1203,7 @@ function App() {
                   <Table responsive>
                     <thead>
                       <tr>
-                        <th>#</th>
+                        {/* <th>#</th> */}
                         <th>Username</th>
                         <th>Email</th>
                         <th>Phone</th>
@@ -1216,7 +1216,7 @@ function App() {
                         if (e.admin === 0) {
                           return (
                             <tr key={i}>
-                              <th scope="row">{i + 1}</th>
+                              {/* <th scope="row">{i + 1}</th> */}
                               <td>{e.username}</td>
                               <td>{e.email}</td>
                               <td>{e.phone}</td>
