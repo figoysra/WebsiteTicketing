@@ -6,7 +6,7 @@ import { Container, Row, Col } from "reactstrap";
 import "../css/dashboard.css";
 import axios from "axios";
 import { FaRegUser, FaTicketAlt, FaPlaneDeparture } from "react-icons/fa";
-import { API_URL } from "../utils/constants";
+import { API_URL, Token } from "../utils/constants";
 import {
   Table,
   Button,
@@ -20,6 +20,7 @@ import moment from 'moment'
 function App() {
   const token = localStorage.getItem("token");
   const [totalUser, settotalUser] = useState([]);
+  const [listAdmin, setListAdmin] = useState([])
   const [transaction, setTransaction] = useState([]);
   const [ticket, setTicket] = useState([]);
   const [country, setCountry] = useState([]);
@@ -51,7 +52,7 @@ function App() {
   });
   const headers = {
     headers: {
-      token: 1234,
+      token: Token,
     },
   };
 
@@ -75,7 +76,13 @@ function App() {
     axios
       .get(`${API_URL}users`, headers)
       .then((response) => {
-        settotalUser(response.data.data.users);
+        let data = response.data.data.users
+        
+        let dataAdmin = data.filter(x => x.admin === 0)
+        let dataUser = data.filter(x => x.admin === 1)
+        // console.log(dataAdmin)
+        settotalUser(dataUser);
+        setListAdmin(dataAdmin)
       })
       .catch((err) => {
         alert(`${err.message} Internal Server Error
@@ -128,6 +135,7 @@ function App() {
         });
       })
       .catch((err) => {
+        // console.log(err)
         alert(`${err.message} Internal Server Error
             Please Call WebAdmin in 021-082`);
       });
@@ -219,12 +227,12 @@ function App() {
       luggage: insTicket.luggage,
       codeAirplane: insTicket.codeAirplane,
     };
-    
+    console.log(body)
     axios
       .post(`${API_URL}ticket`, body, headers)
       .then((response) => {
-        
-        alert(`${response.statusText} Successfull Add New Data`);
+        console.log(response)
+        // alert(`${response.statusText} Successfull Add New Data`);
         getTicket();
         toggleaddflight();
       })
@@ -288,9 +296,9 @@ function App() {
     };
     
     axios
-      .put(`${API_URL}ticket/${idTicket}`, body, {headers: {token: 1234}})
+      .put(`${API_URL}ticket/${idTicket}`, body, {headers: {token: Token}})
       .then((response) => {
-        
+        console.log(response)
         alert(`${response.statusText} Successfull Update Data`);
         getTicket()
         toggleeditflight();
@@ -591,12 +599,12 @@ function App() {
                           setInsTicket({ ...insTicket, wifi: e.target.value })
                         }
                       >
-                        <option value="0">0</option>
-                        <option value="1">1</option>
+                        <option value="0">Yes</option>
+                        <option value="1">No</option>
                       </select>
                     </div>
                     <div class="form-group">
-                      <label for="meal">meal</label>
+                      <label for="meal">Meal</label>
                       <select
                         name="meal"
                         class="form-control"
@@ -604,12 +612,12 @@ function App() {
                           setInsTicket({ ...insTicket, meal: e.target.value })
                         }
                       >
-                        <option value="0">0</option>
-                        <option value="1">1</option>
+                        <option value="0">Yes</option>
+                        <option value="1">No</option>
                       </select>
                     </div>
                     <div class="form-group">
-                      <label for="luggage">luggage</label>
+                      <label for="luggage">Luggage</label>
                       <select
                         name="luggage"
                         class="form-control"
@@ -620,8 +628,8 @@ function App() {
                           })
                         }
                       >
-                        <option value="0">0</option>
-                        <option value="1">1</option>
+                        <option value="0">Yes</option>
+                        <option value="1">No</option>
                       </select>
                     </div>
                     <div class="form-group">
@@ -690,9 +698,9 @@ function App() {
                         <td>{e.price}</td>
                         <td>{e.class}</td>
                         <td>{e.transit}</td>
-                        <td>{e.wifi}</td>
-                        <td>{e.meal}</td>
-                        <td>{e.luggage}</td>
+                        <td>{e.wifi === 0 ? "Yes" : "No"}</td>
+                        <td>{e.meal === 0 ? "Yes" : "No"}</td>
+                        <td>{e.luggage === 0 ? "Yes" : "No"}</td>
                         <td>
                           <button
                             onClick={() => deleteTicket(e.id_ticket)}
@@ -891,8 +899,8 @@ function App() {
                                       })
                                     }
                                   >
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
+                                    <option value="0">Yes</option>
+                                    <option value="1">No</option>
                                   </select>
                                 </div>
                                 <div class="form-group">
@@ -908,8 +916,8 @@ function App() {
                                       })
                                     }
                                   >
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
+                                    <option value="0">Yes</option>
+                                    <option value="1">No</option>
                                   </select>
                                 </div>
                                 <div class="form-group">
@@ -925,8 +933,8 @@ function App() {
                                       })
                                     }
                                   >
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
+                                    <option value="0">Yes</option>
+                                    <option value="1">No</option>
                                   </select>
                                 </div>
                                 <div class="form-group">
@@ -1206,20 +1214,17 @@ function App() {
                         <th>#</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Phone</th>
                         <th>Delete</th>
                         <th>Update</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {totalUser.map((e, i) => {
-                        if (e.admin === 0) {
+                      {listAdmin.map((e, i) => {
                           return (
                             <tr key={i}>
                               <th scope="row">{i + 1}</th>
                               <td>{e.username}</td>
                               <td>{e.email}</td>
-                              <td>{e.phone}</td>
                               <td>
                                 <button
                                   onClick={() => deleteUser(e.id_users)}
@@ -1312,7 +1317,6 @@ function App() {
                               </td>
                             </tr>
                           );
-                        }
                       })}
                     </tbody>
                   </Table>
