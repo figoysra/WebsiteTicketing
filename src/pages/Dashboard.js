@@ -156,7 +156,7 @@ function App() {
     axios
       .put(
         `${API_URL}users/${idAdmin}`, body,
-        {headers: {token: 1234}}
+        {headers: {token: Token}}
       )
       .then((response) => {
         
@@ -419,7 +419,7 @@ function App() {
                 </Col>
               </Row>
             </div>
-            <div className="blue shadow col-4 card1 m-2">
+            <div className="btn-primary shadow col-4 card1 m-2">
               <Row>
                 <Col sm="6" className="title w-50">
                   <h1>{transaction.length}</h1>

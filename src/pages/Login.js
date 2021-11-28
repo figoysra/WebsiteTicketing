@@ -25,22 +25,20 @@ const Login = ()=>{
     e.preventDefault();
     axios.post(`${API_URL}login`, data)
     .then((response) => {
-        // handle success
-        localStorage.setItem("token", response.data.message.tokenAcces)
-        const users = response.data.data.users
-        const id = users.map((e) => {
-           return(e.id_users)
-        })
-        const admin = users.map((e)=>{return(e.admin)})
-        localStorage.setItem("idUsers", id)
-        localStorage.setItem('admin', admin)
-        // alert("succes")
+      console.log(response)
+        // // handle success
+        const user = response.data.data
+        localStorage.setItem("token", response.data.message)
+        localStorage.setItem("idUsers", user.id_users)
+        localStorage.setItem('admin', user.admin)
+        localStorage.setItem("photoProfile", user.photoProfile);
         history.push(`/`)
       })
       .catch((error) => {
+        // console.log(error)
         // handle error
         
-        alert(`${error } username/password salah`)
+        alert(`username/password salah`)
       })
   }
 
@@ -71,7 +69,7 @@ const Login = ()=>{
                   <div className="textbox">
                     <input 
                     type="text" 
-                    placeholder="username" 
+                    placeholder="Username or Email" 
                     name="username"
                     onChange={insertData} 
                     >
@@ -85,7 +83,7 @@ const Login = ()=>{
                     onChange={insertData}
                     >
                     </input>
-                    <img src="https://raw.githubusercontent.com/farizian/week15/master/img/view%201.png" alt=""></img>
+                    {/* <img src="https://raw.githubusercontent.com/farizian/week15/master/img/view%201.png" alt=""></img> */}
                   </div>
                 </div>
                 <div className="buttonlgn">

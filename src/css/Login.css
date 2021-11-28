@@ -101,6 +101,9 @@ body{
     border: none;
     background-color: transparent;
 }
+.lgn .formlgn .signbox .textbox input:focus{
+    outline: none !important;
+}
 .lgn .buttonlgn{
     display: flex;
     flex-direction: column;

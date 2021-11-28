@@ -12,7 +12,7 @@ const Signup =(props)=>{
     email: '',
     password: '',
     photoProfile: 'https://th.bing.com/th/id/OIP.1LRUIB2OXVePxD5hQm4fqwHaHa?w=184&h=184&c=7&r=0&o=5&pid=1.7',
-    admin:'1',
+    admin: 1,
   })
   const setData=(event)=>{
     setUser({
@@ -26,15 +26,16 @@ const Signup =(props)=>{
     event.preventDefault();
     axios.post(`${process.env.REACT_APP_API_URL}register`, user)
     .then(function(response){
-      localStorage.setItem("token", response.data.message.tokenAcces)
+      console.log(response)
+      // localStorage.setItem("token", response.data.message.tokenAcces)
       alert("registrasi berhasil")
-      history.push('/')
+      history.push('/login')
       
-      localStorage.setItem("idUsers", response.data.data.insertId)
+      // localStorage.setItem("idUsers", response.data.data.insertId)
     })
     .catch(function (error){
       
-      alert(`${error } registrasi gagal`)
+      alert(`account telah terdaftar`)
     })
   }
   return(
@@ -57,14 +58,14 @@ const Signup =(props)=>{
                 </div>
                 <div className="signbox">
                   <div class="textbox">
-                    <input type="text" placeholder="Full Name" name="username" onChange={setData}></input>
+                    <input type="text" placeholder="Username" name="username" onChange={setData}></input>
                   </div>
                   <div className="textbox">
                     <input type="text" placeholder="Email" name="email" onChange={setData}></input>
                   </div>
                   <div className="textbox">
                     <input type="password" placeholder="Password" name="password" onChange={setData}></input>
-                    <img src="https://raw.githubusercontent.com/farizian/week15/master/img/view%201.png" alt=""></img>
+                    {/* <img src="https://raw.githubusercontent.com/farizian/week15/master/img/view%201.png" alt=""></img> */}
                   </div>
                 </div>
               </form>
@@ -73,8 +74,7 @@ const Signup =(props)=>{
                   <button className="sign" onClick={submitData}>Sign Up</button>
                 </div>
                 <div className="checkbox">
-                  <Input type="checkbox" className="check" name="terms" value={true}>
-                      </Input>
+                  <Input type="checkbox" className="check" name="terms" value={true} />
                   <p>Accept terms and condition</p>
                 </div>
                 <div className="textbox">

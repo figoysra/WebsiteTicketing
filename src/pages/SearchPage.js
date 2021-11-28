@@ -611,7 +611,7 @@ const Searchpage = () => {
                       <div className="txtDate">
                         <p className="col-4">{date}</p>
 
-                        <p className="col-4 text-end">
+                        <p className="col-4 ">
                           <FontAwesomeIcon
                             icon={faCircle}
                             size="sm"
@@ -620,7 +620,7 @@ const Searchpage = () => {
                           6 Passenger
                         </p>
 
-                        <p className="col-4 text-end ">
+                        <p className="col-4 ">
                           <FontAwesomeIcon
                             icon={faCircle}
                             size="sm"

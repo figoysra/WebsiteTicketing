@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/navbar.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Collapse, NavbarToggler } from "reactstrap";
-import axios from "axios";
-import { API_URL, Token } from "../utils/constants";
 
 const Navbarmenu = (props) => {
+  // console.log(props.token)
+  const admin = JSON.parse(localStorage.getItem("admin"));
+  const photoProfile = localStorage.getItem("photoProfile");
   const [collapsed, setCollapsed] = useState(true);
   const toggleNavbar = () => setCollapsed(!collapsed);
   const [search, setSearch] = useState("");
-  const [dataUser, setdataUser] = useState([]);
   const changeSearch = (event) => {
     setSearch(event.target.value);
   };
@@ -22,29 +22,6 @@ const Navbarmenu = (props) => {
     props.search(search);
   };
 
-  const idUsers = localStorage.getItem("idUsers");
-  // const token = localStorage.getItem("token");
-
-  const getdataUsers = () => {
-    axios
-      .get(`${API_URL}users/${idUsers}`, { headers: { token: Token } })
-      .then((response) => {
-        const user = response.data.data[0]
-        
-        setdataUser(user);
-        
-      })
-      .catch((err) => {
-        alert(`${err.message} Cannot Access Data from Server
-      Please Call Admin in 021-082`);
-      });
-  };
-  useEffect(() => {
-    getdataUsers();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  
-  
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
@@ -92,12 +69,18 @@ const Navbarmenu = (props) => {
                 <Link className="menu1 nav-item" to="/">
                   Find Ticket
                 </Link>
-                <Link className="menu1 nav-item" id="m1" to="/mybooking">
+                <Link
+                  className={`menu1 nav-item ${
+                    admin === 0 ? "d-none" : "d-block"
+                  }`}
+                  id="m1"
+                  to="/mybooking"
+                >
                   My Booking
                 </Link>
               </div>
             </ul>
-            {props.token !== Token ? (
+            {props.token === undefined || props.token === null ? (
               <ul className="navbar-nav secondary-menu">
                 <Link className="type1 nav-item" to="/signup">
                   Sign up
@@ -106,9 +89,11 @@ const Navbarmenu = (props) => {
             ) : (
               <ul className="navbar-nav secondary-menu">
                 <Link
-                  className={dataUser.admin !== 1 ? "type2 nav-item d-blok" : "d-none"}
+                  className={
+                    admin === 0 ? "type2 nav-item d-blok" : "d-none"
+                  }
                   // className= "type2 nav-item d-blok"
-                  
+
                   to="/dashboard"
                 >
                   <img
@@ -137,7 +122,7 @@ const Navbarmenu = (props) => {
                 <Link className="type2 nav-item" id="tp2" to="/mybooking">
                   <img
                     className="profile"
-                    src={dataUser.photoProfile}
+                    src={photoProfile}
                     // src=""
                     alt="imge"
                   />
